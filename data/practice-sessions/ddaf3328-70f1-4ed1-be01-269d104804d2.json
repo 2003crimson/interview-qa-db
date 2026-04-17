@@ -1,0 +1,99 @@
+{
+  "id": "ddaf3328-70f1-4ed1-be01-269d104804d2",
+  "createdAt": "2026-04-14T21:28:28.442Z",
+  "startTime": 1776202108442,
+  "totalQuestions": 5,
+  "categories": [],
+  "resumeContent": "",
+  "customDirections": [],
+  "questions": [
+    {
+      "questionId": "springboot-004",
+      "question": "SpringBoot的常用注解有哪些？各自的作用？",
+      "category": "SpringBoot",
+      "expectedPoints": [],
+      "followUp": [
+        "@Autowired和@Resource的区别？",
+        "@Primary和@Priority的区别？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": "a's'da'd",
+      "aiComment": "感谢回答。由于AI服务未配置，无法进行详细评价。",
+      "score": 50,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "java-collections-007",
+      "question": "HashSet的底层实现是什么？它是如何保证元素唯一的？",
+      "category": "Java集合",
+      "expectedPoints": [],
+      "followUp": [
+        "为什么重写equals()时必须重写hashCode()？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "mysql-010",
+      "question": "如何排查MySQL慢查询？",
+      "category": "MySQL",
+      "expectedPoints": [],
+      "followUp": [
+        "long_query_time设置多少合适？",
+        "如何定位最慢的SQL？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "mysql-005",
+      "question": "如何进行SQL优化？有哪些常见的优化手段？",
+      "category": "MySQL",
+      "expectedPoints": [],
+      "followUp": [
+        "EXPLAIN各字段的含义？",
+        "什么情况会导致索引失效？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "java-collections-006",
+      "question": "ConcurrentHashMap如何在保证线程安全的同时提高并发度？",
+      "category": "Java集合",
+      "expectedPoints": [],
+      "followUp": [
+        "JDK1.8为什么改用synchronized而不是ReentrantLock？",
+        "size()方法如何实现的？"
+      ],
+      "difficulty": "hard",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    }
+  ],
+  "currentIndex": 0,
+  "currentRound": "question",
+  "completed": false,
+  "report": null
+}

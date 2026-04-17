@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>面试练习系统</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f0f2f5;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .header {
+      background: #001529;
+      color: white;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+    }
+    .header h1 { font-size: 18px; font-weight: 600; }
+    .header-nav { display: flex; gap: 24px; }
+    .header-nav a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .header-nav a:hover, .header-nav a.active { color: white; }
+
+    /* Main Container */
+    .main-container {
+      padding-top: 56px;
+      min-height: 100vh;
+    }
+
+    /* Page: Start Practice */
+    .page { display: none; padding: 24px; max-width: 1200px; margin: 0 auto; }
+    .page.active { display: block; }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    .card-title { font-size: 16px; font-weight: 600; margin-bottom: 16px; color: #001529; }
+
+    /* Form Elements */
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #333;
+    }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #d9d9d9;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: inherit;
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none;
+      border-color: #1890ff;
+      box-shadow: 0 0 0 2px rgba(24,144,255,0.2);
+    }
+
+    /* Buttons */
+    .btn {
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-primary { background: #1890ff; color: white; }
+    .btn-primary:hover { background: #40a9ff; }
+    .btn-primary:disabled { background: #d9d9d9; cursor: not-allowed; }
+    .btn-default { background: white; border: 1px solid #d9d9d9; color: #333; }
+    .btn-default:hover { border-color: #1890ff; color: #1890ff; }
+    .btn-danger { background: #ff4d4f; color: white; }
+    .btn-danger:hover { background: #ff7875; }
+
+    /* Category Tags */
+    .category-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .category-tag {
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 13px;
+      cursor: pointer;
+      border: 1px solid #d9d9d9;
+      background: white;
+      transition: all 0.2s;
+    }
+    .category-tag:hover { border-color: #1890ff; color: #1890ff; }
+    .category-tag.selected { background: #1890ff; color: white; border-color: #1890ff; }
+
+    /* Practice Page */
+    .practice-header {
+      background: white;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e8e8e8;
+    }
+    .progress-info {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .progress-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .progress-label { font-size: 13px; color: #666; }
+    .progress-value { font-size: 14px; font-weight: 600; color: #001529; }
+    .difficulty-badge {
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    .difficulty-easy { background: #f6ffed; color: #52c41a; }
+    .difficulty-medium { background: #fffbe6; color: #faad14; }
+    .difficulty-hard { background: #fff2f0; color: #ff4d4f; }
+
+    .practice-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    .question-card {
+      background: white;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    .question-meta { display: flex; gap: 12px; margin-bottom: 16px; }
+    .question-text {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #001529;
+      margin-bottom: 24px;
+    }
+    .answer-area {
+      width: 100%;
+      min-height: 150px;
+      padding: 12px;
+      border: 1px solid #d9d9d9;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: inherit;
+      resize: vertical;
+    }
+    .answer-area:focus {
+      outline: none;
+      border-color: #1890ff;
+      box-shadow: 0 0 0 2px rgba(24,144,255,0.2);
+    }
+    .practice-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+    }
+
+    /* Evaluation Result */
+    .evaluation-result {
+      background: #fafafa;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 16px;
+    }
+    .evaluation-score {
+      font-size: 24px;
+      font-weight: 600;
+      color: #1890ff;
+      margin-bottom: 8px;
+    }
+    .evaluation-comment { font-size: 14px; line-height: 1.6; color: #333; }
+    .followup-question {
+      margin-top: 16px;
+      padding: 12px;
+      background: #e6f7ff;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #1890ff;
+    }
+
+    /* Report Page */
+    .report-header {
+      text-align: center;
+      padding: 40px 24px;
+      background: linear-gradient(135deg, #001529 0%, #1890ff 100%);
+      color: white;
+      border-radius: 8px;
+      margin-bottom: 24px;
+    }
+    .report-score {
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1;
+    }
+    .report-score-label { font-size: 16px; opacity: 0.8; margin-top: 8px; }
+    .report-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin-top: 24px;
+    }
+    .report-stat { text-align: center; }
+    .report-stat-value { font-size: 24px; font-weight: 600; }
+    .report-stat-label { font-size: 13px; opacity: 0.8; }
+
+    .mastery-section { margin-bottom: 24px; }
+    .mastery-item {
+      background: white;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .mastery-icon { font-size: 24px; }
+    .mastery-info { flex: 1; }
+    .mastery-name { font-weight: 600; margin-bottom: 4px; }
+    .mastery-bar {
+      height: 8px;
+      background: #f0f0f0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .mastery-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 0.3s;
+    }
+    .mastery-score { font-size: 20px; font-weight: 600; min-width: 50px; text-align: right; }
+
+    .suggestions-section { margin-top: 24px; }
+    .suggestion-item {
+      background: white;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+      border-left: 4px solid #1890ff;
+    }
+    .suggestion-priority {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-left: 8px;
+    }
+    .priority-high { background: #fff2f0; color: #ff4d4f; }
+    .priority-medium { background: #fffbe6; color: #faad14; }
+
+    /* Question Bank Page */
+    .question-filters {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .question-filters select, .question-filters input {
+      padding: 8px 12px;
+      border: 1px solid #d9d9d9;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .question-list { display: flex; flex-direction: column; gap: 8px; }
+    .question-item {
+      background: white;
+      border-radius: 8px;
+      padding: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+    .question-item:hover { border-color: #1890ff; box-shadow: 0 2px 8px rgba(24,144,255,0.1); }
+    .question-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .question-item-category {
+      background: #e6f7ff;
+      color: #1890ff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    .question-item-text { font-size: 14px; color: #333; line-height: 1.5; }
+    .question-item-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .modal { background: white; border-radius: 8px; width: 90%; max-width: 500px; max-height: 80vh; overflow: hidden; }
+    .modal-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid #e8e8e8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-header h3 { font-size: 16px; }
+    .modal-close { background: none; border: none; font-size: 20px; cursor: pointer; color: #999; }
+    .modal-body { padding: 20px; max-height: 60vh; overflow-y: auto; }
+    .modal-footer {
+      padding: 16px 20px;
+      border-top: 1px solid #e8e8e8;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.75);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 4px;
+      font-size: 14px;
+      z-index: 1001;
+      animation: fadeIn 0.3s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    .hidden { display: none !important; }
+
+    /* Loading */
+    .loading {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      border-top-color: transparent;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #999;
+    }
+    .empty-state-icon { font-size: 48px; margin-bottom: 16px; }
+
+    /* History List */
+    .history-list { display: flex; flex-direction: column; gap: 8px; }
+    .history-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      background: #fafafa;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .history-item:hover { background: #f0f0f0; }
+    .history-info { flex: 1; }
+    .history-mode { font-size: 14px; font-weight: 500; color: #001529; }
+    .history-meta { font-size: 12px; color: #999; margin-top: 4px; }
+    .history-actions { display: flex; gap: 8px; }
+
+    /* Tabs */
+    .tabs { display: flex; border-bottom: 1px solid #e8e8e8; margin-bottom: 16px; }
+    .tab {
+      padding: 12px 24px;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      font-size: 14px;
+      color: #666;
+    }
+    .tab:hover { color: #1890ff; }
+    .tab.active { color: #1890ff; border-bottom-color: #1890ff; }
+
+    /* Resume Section */
+    .resume-section {
+      background: white;
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+    .resume-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .resume-textarea { width: 100%; min-height: 200px; padding: 12px; border: 1px solid #d9d9d9; border-radius: 4px; font-size: 14px; font-family: inherit; resize: vertical; }
+    .resume-textarea:focus { outline: none; border-color: #1890ff; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1>面试练习系统</h1>
+    <nav class="header-nav">
+      <a onclick="showPage('practice')" id="nav-practice">开始练习</a>
+      <a onclick="showPage('bank')" id="nav-bank">题库管理</a>
+      <a onclick="showPage('history')" id="nav-history">练习历史</a>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Page: Start Practice -->
+    <div class="page active" id="page-practice">
+      <div style="max-width: 900px; margin: 0 auto;">
+        <div class="card">
+          <div class="card-title">练习设置</div>
+
+          <div class="form-group">
+            <label>选择分类（可多选）</label>
+            <div class="category-tags" id="category-tags"></div>
+          </div>
+
+          <div class="form-group">
+            <label>题目数量</label>
+            <select id="question-count">
+              <option value="5">5题（快速练习）</option>
+              <option value="10" selected>10题（标准练习）</option>
+              <option value="15">15题（强化练习）</option>
+              <option value="20">20题（完整练习）</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>追问深度</label>
+            <select id="followup-depth">
+              <option value="1">1次（基础，确认即可）</option>
+              <option value="2" selected>2次（标准，深入探讨）</option>
+              <option value="3">3次（深入，刨根问底）</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>自定义练习方向（可选）</label>
+            <input type="text" id="custom-direction" placeholder="例如：想重点练习分布式事务、微服务架构">
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <div class="resume-header">
+            <div class="card-title" style="margin: 0;">简历信息（可选）</div>
+            <button class="btn btn-default" onclick="loadSavedResume()">加载已保存</button>
+          </div>
+          <textarea class="resume-textarea" id="resume-input" placeholder="粘贴你的简历内容，AI将根据简历生成针对性的面试题..."></textarea>
+          <div style="margin-top: 8px; font-size: 12px; color: #999;">保存简历后，下次练习会自动加载</div>
+        </div>
+
+        <button class="btn btn-primary" style="width: 100%; padding: 12px;" onclick="startPractice()">
+          开始练习
+        </button>
+      </div>
+    </div>
+
+    <!-- Page: Practice -->
+    <div class="page" id="page-practice-session">
+      <div class="practice-header">
+        <div class="progress-info">
+          <div class="progress-item">
+            <span class="progress-label">题目</span>
+            <span class="progress-value" id="progress-text">1/10</span>
+          </div>
+          <div class="progress-item">
+            <span class="progress-label">难度</span>
+            <span class="difficulty-badge difficulty-easy" id="difficulty-badge">简单</span>
+          </div>
+          <div class="progress-item">
+            <span class="progress-label">已用时</span>
+            <span class="progress-value" id="time-elapsed">00:00</span>
+          </div>
+        </div>
+        <button class="btn btn-default" onclick="finishPractice()">结束练习</button>
+      </div>
+
+      <div class="practice-content">
+        <div class="question-card">
+          <div class="question-meta">
+            <span class="question-item-category" id="question-category">Java并发</span>
+            <span class="difficulty-badge difficulty-easy" id="question-difficulty">简单</span>
+          </div>
+          <div class="question-text" id="question-text">
+            线程池的核心参数有哪些？各自的作用是什么？
+          </div>
+
+          <textarea class="answer-area" id="answer-input" placeholder="请输入你的回答..."></textarea>
+
+          <div class="practice-actions">
+            <div>
+              <button class="btn btn-default" id="btn-submit" onclick="submitAnswer()">提交回答</button>
+              <button class="btn btn-primary hidden" id="btn-next" onclick="nextQuestion()">继续下一题</button>
+              <button class="btn btn-default hidden" id="btn-followup" onclick="answerFollowUp()">回答追问</button>
+            </div>
+            <div id="evaluation-area"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page: Report -->
+    <div class="page" id="page-report">
+      <div id="report-content"></div>
+    </div>
+
+    <!-- Page: Question Bank -->
+    <div class="page" id="page-bank">
+      <div class="card">
+        <div class="question-filters">
+          <select id="bank-filter-category" onchange="loadQuestions()">
+            <option value="">全部分类</option>
+          </select>
+          <select id="bank-filter-difficulty" onchange="loadQuestions()">
+            <option value="">全部难度</option>
+            <option value="easy">简单</option>
+            <option value="medium">中等</option>
+            <option value="hard">困难</option>
+          </select>
+          <input type="text" id="bank-search" placeholder="搜索题目..." oninput="loadQuestions()">
+          <button class="btn btn-primary" onclick="showQuestionModal()">添加题目</button>
+          <button class="btn btn-default" onclick="showImportModal()">导入</button>
+          <button class="btn btn-default" onclick="exportQuestions()">导出</button>
+        </div>
+        <div class="question-list" id="question-list"></div>
+      </div>
+    </div>
+
+    <!-- Page: History -->
+    <div class="page" id="page-history">
+      <div class="card">
+        <div class="card-title">练习历史</div>
+        <div class="history-list" id="history-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Question Modal -->
+  <div class="modal-overlay hidden" id="question-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-title">添加题目</h3>
+        <button class="modal-close" onclick="closeQuestionModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>分类</label>
+          <input type="text" id="q-category" placeholder="如: Java并发">
+        </div>
+        <div class="form-group">
+          <label>题目</label>
+          <textarea id="q-question" placeholder="输入面试题..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>答案（可选）</label>
+          <textarea id="q-answer" placeholder="输入参考答案..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>难度</label>
+          <select id="q-difficulty">
+            <option value="easy">简单</option>
+            <option value="medium" selected>中等</option>
+            <option value="hard">困难</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" onclick="closeQuestionModal()">取消</button>
+        <button class="btn btn-primary" onclick="saveQuestion()">保存</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Import Modal -->
+  <div class="modal-overlay hidden" id="import-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>导入题目</h3>
+        <button class="modal-close" onclick="closeImportModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>导入格式</label>
+          <select id="import-format">
+            <option value="json">JSON</option>
+            <option value="markdown">Markdown</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>题目数据</label>
+          <textarea id="import-data" placeholder="粘贴JSON数组或Markdown格式的题目..." style="min-height: 200px;"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-default" onclick="closeImportModal()">取消</button>
+        <button class="btn btn-primary" onclick="importQuestions()">导入</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // State
+    let currentSession = null;
+    let currentPage = 'practice';
+    let categories = [];
+    let questions = [];
+    let editingQuestionId = null;
+    let timerInterval = null;
+
+    // DOM
+    const pages = {
+      practice: document.getElementById('page-practice'),
+      'practice-session': document.getElementById('page-practice-session'),
+      report: document.getElementById('page-report'),
+      bank: document.getElementById('page-bank'),
+      history: document.getElementById('page-history')
+    };
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCategories();
+      loadSettings();
+    });
+
+    // Navigation
+    function showPage(page) {
+      currentPage = page;
+      Object.values(pages).forEach(p => p.classList.remove('active'));
+      pages[page].classList.add('active');
+
+      document.querySelectorAll('.header-nav a').forEach(a => a.classList.remove('active'));
+      const navLink = document.getElementById(`nav-${page === 'practice-session' ? 'practice' : page}`);
+      if (navLink) navLink.classList.add('active');
+
+      if (page === 'bank') loadQuestions();
+      if (page === 'history') loadHistory();
+    }
+
+    // Load categories
+    async function loadCategories() {
+      try {
+        const res = await fetch('/api/questions/categories');
+        categories = await res.json();
+
+        const tagsContainer = document.getElementById('category-tags');
+        tagsContainer.innerHTML = categories.map(cat =>
+          `<div class="category-tag" onclick="toggleCategory(this, '${cat.name}')">${cat.name} (${cat.count})</div>`
+        ).join('');
+
+        const bankFilter = document.getElementById('bank-filter-category');
+        bankFilter.innerHTML = '<option value="">全部分类</option>' +
+          categories.map(cat => `<option value="${cat.name}">${cat.name}</option>`).join('');
+      } catch (err) {
+        showToast('加载分类失败');
+      }
+    }
+
+    function toggleCategory(el, name) {
+      el.classList.toggle('selected');
+    }
+
+    function getSelectedCategories() {
+      return Array.from(document.querySelectorAll('.category-tag.selected'))
+        .map(el => el.textContent.replace(/\s*\(\d+\)/, '').trim());
+    }
+
+    // Load settings
+    async function loadSettings() {
+      try {
+        const res = await fetch('/api/config');
+        const config = await res.json();
+        if (config.resume) {
+          document.getElementById('resume-input').value = config.resume;
+        }
+      } catch (err) {
+        console.error('加载设置失败');
+      }
+    }
+
+    async function loadSavedResume() {
+      try {
+        const res = await fetch('/api/config');
+        const config = await res.json();
+        if (config.resume) {
+          document.getElementById('resume-input').value = config.resume;
+          showToast('已加载保存的简历');
+        } else {
+          showToast('没有保存的简历');
+        }
+      } catch (err) {
+        showToast('加载失败');
+      }
+    }
+
+    // Start Practice
+    async function startPractice() {
+      const selectedCategories = getSelectedCategories();
+      const count = parseInt(document.getElementById('question-count').value);
+      const maxFollowUpDepth = parseInt(document.getElementById('followup-depth').value);
+      const resume = document.getElementById('resume-input').value.trim();
+      const customDirection = document.getElementById('custom-direction').value.trim();
+
+      // 保存简历
+      if (resume) {
+        await fetch('/api/config', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ resume })
+        });
+      }
+
+      try {
+        const res = await fetch('/api/practice/start', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            categories: selectedCategories,
+            totalQuestions: count,
+            maxFollowUpDepth,
+            resume,
+            customDirections: customDirection ? [customDirection] : []
+          })
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          throw new Error(err.error || '启动失败');
+        }
+
+        const data = await res.json();
+        currentSession = {
+          id: data.sessionId,
+          totalQuestions: count,
+          maxFollowUpDepth
+        };
+
+        showPracticeSession(data);
+      } catch (err) {
+        showToast(err.message);
+      }
+    }
+
+    function showPracticeSession(data) {
+      showPage('practice-session');
+
+      updateProgress(data.progress);
+      document.getElementById('question-text').textContent = data.question;
+      document.getElementById('question-category').textContent = data.category;
+      document.getElementById('answer-input').value = '';
+      document.getElementById('answer-input').disabled = false;
+      document.getElementById('answer-input').focus();
+
+      document.getElementById('btn-submit').classList.remove('hidden');
+      document.getElementById('btn-next').classList.add('hidden');
+      document.getElementById('btn-followup').classList.add('hidden');
+      document.getElementById('evaluation-area').innerHTML = '';
+
+      startTimer();
+    }
+
+    function updateProgress(progress) {
+      document.getElementById('progress-text').textContent = `${progress.current}/${progress.total}`;
+
+      const difficultyEl = document.getElementById('difficulty-badge');
+      difficultyEl.textContent = { easy: '简单', medium: '中等', hard: '困难' }[progress.difficulty];
+      difficultyEl.className = `difficulty-badge difficulty-${progress.difficulty}`;
+
+      const qDifficultyEl = document.getElementById('question-difficulty');
+      qDifficultyEl.textContent = { easy: '简单', medium: '中等', hard: '困难' }[progress.difficulty];
+      qDifficultyEl.className = `difficulty-badge difficulty-${progress.difficulty}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      const startTime = Date.now();
+      timerInterval = setInterval(() => {
+        const elapsed = Math.floor((Date.now() - startTime) / 1000);
+        const mins = Math.floor(elapsed / 60).toString().padStart(2, '0');
+        const secs = (elapsed % 60).toString().padStart(2, '0');
+        document.getElementById('time-elapsed').textContent = `${mins}:${secs}`;
+      }, 1000);
+    }
+
+    // Submit Answer
+    async function submitAnswer() {
+      const answer = document.getElementById('answer-input').value.trim();
+      if (!answer) {
+        showToast('请输入回答');
+        return;
+      }
+
+      const btn = document.getElementById('btn-submit');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="loading"></span>';
+
+      try {
+        const res = await fetch(`/api/practice/${currentSession.id}/answer`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ answer })
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          throw new Error(err.error || '提交失败');
+        }
+
+        const data = await res.json();
+
+        if (data.readyForReport) {
+          // 所有题目已完成
+          setTimeout(() => finishPractice(), 1000);
+          return;
+        }
+
+        // 等待评价
+        pollEvaluation();
+      } catch (err) {
+        showToast(err.message);
+        btn.disabled = false;
+        btn.textContent = '提交回答';
+      }
+    }
+
+    async function pollEvaluation() {
+      try {
+        const res = await fetch(`/api/practice/${currentSession.id}/evaluation`);
+        const data = await res.json();
+
+        if (!data.ready) {
+          setTimeout(pollEvaluation, 1000);
+          return;
+        }
+
+        showEvaluation(data);
+      } catch (err) {
+        showToast('获取评价失败');
+      }
+    }
+
+    function showEvaluation(data) {
+      document.getElementById('answer-input').disabled = true;
+
+      const scoreColor = data.score >= 80 ? '#52c41a' : data.score >= 60 ? '#faad14' : '#ff4d4f';
+      const followUpCount = data.followUpCount || 0;
+      const maxFollowUpDepth = data.maxFollowUpDepth || 2;
+      let html = `
+        <div class="evaluation-result">
+          <div class="evaluation-score" style="color: ${scoreColor}">${data.score}分</div>
+          <div class="evaluation-comment">${escapeHtml(data.comment)}</div>
+      `;
+
+      // 检查是否允许继续追问（未达深度上限）
+      const canFollowUp = data.needFollowUp && data.followUpQuestion && followUpCount < maxFollowUpDepth;
+
+      if (canFollowUp) {
+        html += `<div class="followup-question"><strong>追问 (${followUpCount}/${maxFollowUpDepth})：</strong>${escapeHtml(data.followUpQuestion)}</div>`;
+        document.getElementById('btn-submit').classList.add('hidden');
+        document.getElementById('btn-followup').classList.remove('hidden');
+        document.getElementById('answer-input').disabled = false;
+        document.getElementById('answer-input').value = '';
+        document.getElementById('answer-input').focus();
+      } else {
+        document.getElementById('btn-submit').classList.add('hidden');
+        document.getElementById('btn-next').classList.remove('hidden');
+      }
+
+      html += '</div>';
+      document.getElementById('evaluation-area').innerHTML = html;
+    }
+
+    async function answerFollowUp() {
+      const answer = document.getElementById('answer-input').value.trim();
+      if (!answer) {
+        showToast('请输入追问的回答');
+        return;
+      }
+
+      const btn = document.getElementById('btn-followup');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="loading"></span>';
+
+      try {
+        const res = await fetch(`/api/practice/${currentSession.id}/answer`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ answer })
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          throw new Error(err.error || '提交失败');
+        }
+
+        const data = await res.json();
+
+        if (data.readyForReport) {
+          // 恢复按钮状态，然后跳转
+          btn.disabled = false;
+          btn.textContent = '回答追问';
+          setTimeout(() => finishPractice(), 1000);
+          return;
+        }
+
+        // 显示下一题
+        showNextQuestion(data);
+      } catch (err) {
+        showToast(err.message);
+        btn.disabled = false;
+        btn.textContent = '回答追问';
+      }
+    }
+
+    async function nextQuestion() {
+      const btn = document.getElementById('btn-next');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="loading"></span>';
+
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+        const res = await fetch(`/api/practice/${currentSession.id}/question`, {
+          signal: controller.signal
+        });
+
+        clearTimeout(timeoutId);
+
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({ error: '获取下一题失败' }));
+          throw new Error(err.error || '获取下一题失败');
+        }
+
+        const data = await res.json();
+        showNextQuestion(data);
+      } catch (err) {
+        if (err.name === 'AbortError') {
+          showToast('请求超时，请检查网络或服务器状态');
+        } else {
+          showToast(err.message || '获取下一题失败');
+        }
+        btn.disabled = false;
+        btn.innerHTML = '继续下一题';
+      }
+    }
+
+    function showNextQuestion(data) {
+      updateProgress(data.progress);
+      document.getElementById('question-text').textContent = data.nextQuestion || data.question;
+      document.getElementById('question-category').textContent = data.category;
+      document.getElementById('answer-input').value = '';
+      document.getElementById('answer-input').disabled = false;
+      document.getElementById('answer-input').focus();
+
+      document.getElementById('btn-submit').classList.remove('hidden');
+      document.getElementById('btn-next').classList.add('hidden');
+      document.getElementById('btn-followup').classList.add('hidden');
+      document.getElementById('evaluation-area').innerHTML = '';
+    }
+
+    async function finishPractice() {
+      if (timerInterval) clearInterval(timerInterval);
+
+      try {
+        await fetch(`/api/practice/${currentSession.id}/finish`, { method: 'POST' });
+
+        // 轮询报告生成
+        pollReport();
+      } catch (err) {
+        showToast('结束练习失败');
+      }
+    }
+
+    async function pollReport() {
+      try {
+        const res = await fetch(`/api/practice/${currentSession.id}/report`);
+        if (!res.ok) {
+          setTimeout(pollReport, 1000);
+          return;
+        }
+
+        const data = await res.json();
+        showReport(data);
+      } catch (err) {
+        setTimeout(pollReport, 1000);
+      }
+    }
+
+    function showReport(data) {
+      showPage('report');
+
+      const report = data.report;
+      const scoreColor = report.totalScore >= 80 ? '#52c41a' : report.totalScore >= 60 ? '#faad14' : '#ff4d4f';
+
+      let html = `
+        <div class="report-header">
+          <div class="report-score" style="color: ${scoreColor}">${report.totalScore}</div>
+          <div class="report-score-label">总体得分</div>
+          <div class="report-stats">
+            <div class="report-stat">
+              <div class="report-stat-value">${data.totalQuestions}</div>
+              <div class="report-stat-label">总题目</div>
+            </div>
+            <div class="report-stat">
+              <div class="report-stat-value">${Math.round(data.duration / 60000)}分钟</div>
+              <div class="report-stat-label">练习时长</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mastery-section">
+          <div class="card-title">分类掌握情况</div>
+      `;
+
+      for (const [category, mastery] of Object.entries(report.mastery)) {
+        const barColor = mastery.score >= 80 ? '#52c41a' : mastery.score >= 60 ? '#faad14' : '#ff4d4f';
+        const icon = mastery.score >= 80 ? '✅' : mastery.score >= 60 ? '⚠️' : '❌';
+        html += `
+          <div class="mastery-item">
+            <div class="mastery-icon">${icon}</div>
+            <div class="mastery-info">
+              <div class="mastery-name">${category}</div>
+              <div class="mastery-bar">
+                <div class="mastery-bar-fill" style="width: ${mastery.score}%; background: ${barColor}"></div>
+              </div>
+            </div>
+            <div class="mastery-score">${mastery.score}分</div>
+          </div>
+        `;
+      }
+
+      html += '</div>';
+
+      if (report.suggestions && report.suggestions.length > 0) {
+        html += `
+          <div class="card suggestions-section">
+            <div class="card-title">改进建议</div>
+        `;
+
+        report.suggestions.forEach(s => {
+          html += `
+            <div class="suggestion-item">
+              <strong>${s.topic}</strong>
+              <span class="suggestion-priority ${s.priority === 'high' ? 'priority-high' : 'priority-medium'}">
+                ${s.priority === 'high' ? '高优先级' : '中优先级'}
+              </span>
+              <p style="margin-top: 8px; color: #666;">${s.advice}</p>
+            </div>
+          `;
+        });
+
+        html += '</div>';
+      }
+
+      html += `
+        <div style="display: flex; gap: 12px; margin-top: 24px;">
+          <button class="btn btn-primary" onclick="exportReport('markdown')">导出Markdown</button>
+          <button class="btn btn-default" onclick="exportReport('json')">导出JSON</button>
+          <button class="btn btn-default" onclick="showPage('practice')">返回首页</button>
+        </div>
+      `;
+
+      document.getElementById('report-content').innerHTML = html;
+    }
+
+    async function exportReport(format) {
+      window.open(`/api/practice/${currentSession.id}/export?format=${format}`, '_blank');
+    }
+
+    // Question Bank
+    async function loadQuestions() {
+      const category = document.getElementById('bank-filter-category').value;
+      const difficulty = document.getElementById('bank-filter-difficulty').value;
+      const search = document.getElementById('bank-search').value.toLowerCase();
+
+      try {
+        let url = '/api/questions?';
+        if (category) url += `category=${encodeURIComponent(category)}&`;
+        if (difficulty) url += `difficulty=${difficulty}&`;
+
+        const res = await fetch(url);
+        const data = await res.json();
+
+        let filtered = data.questions;
+        if (search) {
+          filtered = filtered.filter(q =>
+            q.question.toLowerCase().includes(search) ||
+            (q.answer && q.answer.toLowerCase().includes(search))
+          );
+        }
+
+        renderQuestionList(filtered);
+      } catch (err) {
+        showToast('加载题库失败');
+      }
+    }
+
+    function renderQuestionList(questions) {
+      const list = document.getElementById('question-list');
+
+      if (questions.length === 0) {
+        list.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📝</div><p>暂无题目</p></div>';
+        return;
+      }
+
+      list.innerHTML = questions.map(q => `
+        <div class="question-item" onclick="showQuestionDetail('${q.id}')">
+          <div class="question-item-header">
+            <span class="question-item-category">${q.category}</span>
+            <span class="difficulty-badge difficulty-${q.difficulty}">${q.difficulty === 'easy' ? '简单' : q.difficulty === 'medium' ? '中等' : '困难'}</span>
+          </div>
+          <div class="question-item-text">${escapeHtml(q.question)}</div>
+          <div class="question-item-footer">
+            <span>${q.source === 'preset' ? '预设' : '自定义'}</span>
+            ${q.tags && q.tags.length > 0 ? `<span>标签: ${q.tags.join(', ')}</span>` : ''}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function showQuestionDetail(id) {
+      const q = questions.find(q => q.id === id);
+      if (!q) return;
+
+      editingQuestionId = id;
+      document.getElementById('modal-title').textContent = '编辑题目';
+      document.getElementById('q-category').value = q.category;
+      document.getElementById('q-question').value = q.question;
+      document.getElementById('q-answer').value = q.answer || '';
+      document.getElementById('q-difficulty').value = q.difficulty;
+      document.getElementById('question-modal').classList.remove('hidden');
+    }
+
+    function showQuestionModal() {
+      editingQuestionId = null;
+      document.getElementById('modal-title').textContent = '添加题目';
+      document.getElementById('q-category').value = '';
+      document.getElementById('q-question').value = '';
+      document.getElementById('q-answer').value = '';
+      document.getElementById('q-difficulty').value = 'medium';
+      document.getElementById('question-modal').classList.remove('hidden');
+    }
+
+    function closeQuestionModal() {
+      document.getElementById('question-modal').classList.add('hidden');
+      editingQuestionId = null;
+    }
+
+    async function saveQuestion() {
+      const category = document.getElementById('q-category').value.trim();
+      const question = document.getElementById('q-question').value.trim();
+      const answer = document.getElementById('q-answer').value.trim();
+      const difficulty = document.getElementById('q-difficulty').value;
+
+      if (!category || !question) {
+        showToast('分类和题目不能为空');
+        return;
+      }
+
+      try {
+        const url = editingQuestionId
+          ? `/api/questions/${editingQuestionId}`
+          : '/api/questions';
+
+        const res = await fetch(url, {
+          method: editingQuestionId ? 'PUT' : 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ category, question, answer, difficulty })
+        });
+
+        if (!res.ok) throw new Error('保存失败');
+
+        closeQuestionModal();
+        loadQuestions();
+        loadCategories();
+        showToast('保存成功');
+      } catch (err) {
+        showToast('保存失败');
+      }
+    }
+
+    function showImportModal() {
+      document.getElementById('import-modal').classList.remove('hidden');
+    }
+
+    function closeImportModal() {
+      document.getElementById('import-modal').classList.add('hidden');
+    }
+
+    async function importQuestions() {
+      const format = document.getElementById('import-format').value;
+      const data = document.getElementById('import-data').value.trim();
+
+      if (!data) {
+        showToast('请输入题目数据');
+        return;
+      }
+
+      try {
+        let questions;
+        if (format === 'json') {
+          questions = JSON.parse(data);
+        } else {
+          // Markdown格式解析
+          questions = parseMarkdownQuestions(data);
+        }
+
+        const res = await fetch('/api/questions/import', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ questions, format })
+        });
+
+        if (!res.ok) throw new Error('导入失败');
+
+        const result = await res.json();
+        closeImportModal();
+        loadQuestions();
+        loadCategories();
+        showToast(`成功导入 ${result.imported} 道题目`);
+      } catch (err) {
+        showToast('导入失败：' + err.message);
+      }
+    }
+
+    function parseMarkdownQuestions(md) {
+      const questions = [];
+      const parts = md.split(/^##\s+/m).filter(Boolean);
+
+      for (const part of parts) {
+        const lines = part.trim().split('\n');
+        const category = lines[0].trim();
+        const qParts = part.split(/^###\s+\d+\.\s+/m).filter(Boolean);
+
+        for (const qPart of qParts) {
+          const qLines = qPart.trim().split('\n');
+          const questionText = qLines[0].replace(/\*\*难度\*\*.*$/, '').trim();
+
+          let difficulty = 'medium';
+          let answer = '';
+
+          for (const line of qLines) {
+            if (line.includes('**难度**')) {
+              if (line.includes('简单')) difficulty = 'easy';
+              else if (line.includes('困难')) difficulty = 'hard';
+            }
+            if (line.includes('**答案**')) {
+              answer = line.replace('**答案**', '').trim();
+            }
+          }
+
+          if (questionText) {
+            questions.push({
+              category,
+              question: questionText,
+              answer,
+              difficulty
+            });
+          }
+        }
+      }
+
+      return questions;
+    }
+
+    async function exportQuestions() {
+      window.open('/api/questions/export?format=markdown', '_blank');
+    }
+
+    // History
+    async function loadHistory() {
+      try {
+        const res = await fetch('/api/practice/history');
+        const sessions = await res.json();
+
+        const list = document.getElementById('history-list');
+
+        if (sessions.length === 0) {
+          list.innerHTML = '<div class="empty-state"><div class="empty-state-icon">📋</div><p>暂无练习记录</p></div>';
+          return;
+        }
+
+        list.innerHTML = sessions.map(s => `
+          <div class="history-item" onclick="viewHistory('${s.id}')">
+            <div class="history-info">
+              <div class="history-mode">${s.categories && s.categories.length > 0 ? s.categories.join(', ') : '综合练习'}</div>
+              <div class="history-meta">
+                ${new Date(s.createdAt).toLocaleString('zh-CN')} |
+                ${s.answeredQuestions}/${s.totalQuestions}题 |
+                ${s.completed ? '已完成' : '未完成'}
+              </div>
+            </div>
+            <div class="history-actions">
+              <button class="btn btn-danger" onclick="event.stopPropagation(); deleteHistory('${s.id}')">删除</button>
+            </div>
+          </div>
+        `).join('');
+      } catch (err) {
+        showToast('加载历史失败');
+      }
+    }
+
+    async function viewHistory(id) {
+      try {
+        const res = await fetch(`/api/practice/${id}/report`);
+        if (!res.ok) {
+          showToast('获取报告失败');
+          return;
+        }
+
+        const data = await res.json();
+        currentSession = { id };
+        showReport(data);
+      } catch (err) {
+        showToast('加载失败');
+      }
+    }
+
+    async function deleteHistory(id) {
+      if (!confirm('确定删除这条记录？')) return;
+
+      try {
+        await fetch(`/api/practice/history/${id}`, { method: 'DELETE' });
+        loadHistory();
+        showToast('已删除');
+      } catch (err) {
+        showToast('删除失败');
+      }
+    }
+
+    // Utilities
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>

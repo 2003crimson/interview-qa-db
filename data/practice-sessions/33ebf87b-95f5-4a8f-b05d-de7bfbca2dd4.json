@@ -1,0 +1,59 @@
+{
+  "id": "33ebf87b-95f5-4a8f-b05d-de7bfbca2dd4",
+  "createdAt": "2026-04-17T02:57:12.904Z",
+  "startTime": 1776394632904,
+  "totalQuestions": 3,
+  "categories": [],
+  "resumeContent": "",
+  "customDirections": [],
+  "questions": [
+    {
+      "questionId": "java-collections-001",
+      "question": "Java集合框架的整体结构是什么？请画出继承关系图",
+      "category": "Java集合",
+      "expectedPoints": [],
+      "followUp": [
+        "Map接口为什么不继承Collection？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": "�ҵĴ���ʹ��Spring Boot�ĳ���ע��",
+      "aiComment": "感谢回答。由于AI服务未配置，无法进行详细评价。",
+      "score": 50,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "mysql-mo1lbb4n1hm",
+      "question": "2）时区处理差异⼤",
+      "category": "MySQL",
+      "expectedPoints": [],
+      "followUp": [],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "消息队列-mo1lbb4pokt",
+      "question": "消息队列设计成推消息还是拉消息？推拉模式的优缺点？",
+      "category": "消息队列",
+      "expectedPoints": [],
+      "followUp": [],
+      "difficulty": "hard",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    }
+  ],
+  "currentIndex": 0,
+  "currentRound": "question",
+  "completed": false,
+  "report": null
+}

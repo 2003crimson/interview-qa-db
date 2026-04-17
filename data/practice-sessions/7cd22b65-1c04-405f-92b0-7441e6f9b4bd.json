@@ -1,0 +1,187 @@
+{
+  "id": "7cd22b65-1c04-405f-92b0-7441e6f9b4bd",
+  "createdAt": "2026-04-14T21:16:32.271Z",
+  "startTime": 1776201392271,
+  "totalQuestions": 10,
+  "categories": [
+    "Openclaw"
+  ],
+  "resumeContent": "",
+  "customDirections": [],
+  "questions": [
+    {
+      "questionId": "openclaw-008",
+      "question": "Claude Code的工作流程是怎样的？",
+      "category": "Openclaw",
+      "expectedPoints": [],
+      "followUp": [
+        "Claude Code如何处理多步骤复杂任务？",
+        "Agent循环可能陷入哪些问题？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": "1",
+      "aiComment": "感谢回答。由于AI服务未配置，无法进行详细评价。",
+      "score": 50,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "openclaw-001",
+      "question": "什么是模型上下文（Context）？它对Agent行为有什么影响？",
+      "category": "Openclaw",
+      "expectedPoints": [],
+      "followUp": [
+        "上下文太长会有什么影响？",
+        "如何优化上下文使用？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "openclaw-005",
+      "question": "什么是Tool Use？为什么Tool Use对Agent很重要？",
+      "category": "Openclaw",
+      "expectedPoints": [],
+      "followUp": [
+        "Tool Use的典型限制是什么？",
+        "如何设计有效的Tool定义？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "openclaw-002",
+      "question": "Claude Code的Hook机制有哪些？分别在什么时机触发？",
+      "category": "Openclaw",
+      "expectedPoints": [],
+      "followUp": [
+        "Hook能修改工具执行结果吗？",
+        "如何用Hook实现自动代码审查？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "openclaw-010",
+      "question": "如何评估Agent的效果？有哪些关键指标？",
+      "category": "Openclaw",
+      "expectedPoints": [],
+      "followUp": [
+        "如何建立Agent的评测数据集？",
+        "成功率很高但效率很低怎么优化？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "openclaw-004",
+      "question": "Agent的Memory机制是怎样的？为什么需要记忆？",
+      "category": "Openclaw",
+      "expectedPoints": [],
+      "followUp": [
+        "如何实现选择性记忆（忘记无用信息）？",
+        "记忆的存储格式是什么？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "openclaw-009",
+      "question": "Agent的Self-Correction机制是什么？如何在代码中实现？",
+      "category": "Openclaw",
+      "expectedPoints": [],
+      "followUp": [
+        "如何避免Agent陷入无限重试循环？",
+        "Self-Correction和Test-Driven Agent的区别？"
+      ],
+      "difficulty": "hard",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "openclaw-007",
+      "question": "Prompt Engineering对Agent效果有什么影响？有哪些关键技巧？",
+      "category": "Openclaw",
+      "expectedPoints": [],
+      "followUp": [
+        "System Prompt和User Prompt的区别？",
+        "如何避免Prompt注入攻击？"
+      ],
+      "difficulty": "medium",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "openclaw-006",
+      "question": "MCP协议是什么？它解决了什么问题？",
+      "category": "Openclaw",
+      "expectedPoints": [],
+      "followUp": [
+        "MCP和Function Calling的区别是什么？",
+        "如何开发一个MCP Server？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "openclaw-003",
+      "question": "PreTool Hook能做什么？举一个实际应用场景",
+      "category": "Openclaw",
+      "expectedPoints": [],
+      "followUp": [
+        "PostTool和PreTool如何配合使用？",
+        "如何用Hook实现干运行模式？"
+      ],
+      "difficulty": "medium",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    }
+  ],
+  "currentIndex": 0,
+  "currentRound": "question",
+  "completed": false,
+  "report": null
+}

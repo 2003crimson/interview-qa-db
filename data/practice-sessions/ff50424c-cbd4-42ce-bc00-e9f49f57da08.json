@@ -1,0 +1,60 @@
+{
+  "id": "ff50424c-cbd4-42ce-bc00-e9f49f57da08",
+  "createdAt": "2026-04-17T02:53:58.998Z",
+  "startTime": 1776394438998,
+  "totalQuestions": 3,
+  "categories": [],
+  "resumeContent": "",
+  "customDirections": [],
+  "questions": [
+    {
+      "questionId": "java热门题-mo1oifaneo8",
+      "question": "3）主从延迟",
+      "category": "Java热门200题",
+      "expectedPoints": [],
+      "followUp": [],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": "�ҵĴ���ʹ��Spring Boot�ĳ���ע��",
+      "aiComment": "感谢回答。由于AI服务未配置，无法进行详细评价。",
+      "score": 50,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "mysql-004",
+      "question": "MySQL的锁有哪些类型？",
+      "category": "MySQL",
+      "expectedPoints": [],
+      "followUp": [
+        "Next-Key Lock解决的是什么问题？",
+        "死锁是如何产生和检测的？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "ai大模型-mo1lbb4lmo8",
+      "question": "什么是Manus？说说你对它的了解",
+      "category": "AI大模型",
+      "expectedPoints": [],
+      "followUp": [],
+      "difficulty": "hard",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    }
+  ],
+  "currentIndex": 0,
+  "currentRound": "question",
+  "completed": false,
+  "report": null
+}
