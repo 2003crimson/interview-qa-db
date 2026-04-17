@@ -1,0 +1,60 @@
+{
+  "id": "1188c053-683e-442e-b63c-25a2af427322",
+  "createdAt": "2026-04-16T18:33:35.448Z",
+  "startTime": 1776364415448,
+  "totalQuestions": 3,
+  "categories": [],
+  "resumeContent": "",
+  "customDirections": [],
+  "questions": [
+    {
+      "questionId": "springboot-004",
+      "question": "SpringBoot的常用注解有哪些？各自的作用？",
+      "category": "SpringBoot",
+      "expectedPoints": [],
+      "followUp": [
+        "@Autowired和@Resource的区别？",
+        "@Primary和@Priority的区别？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": "��ʹ�ù�SpringBoot��Controller��Service��Repository��ע��",
+      "aiComment": "感谢回答。由于AI服务未配置，无法进行详细评价。",
+      "score": 50,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "java热门题-mo1oifan5iq",
+      "question": "1）通信内容加密",
+      "category": "Java热门200题",
+      "expectedPoints": [],
+      "followUp": [],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "java并发-mo1lbb4mpj8",
+      "question": "Java 线程池内部任务出异常后，如何知道是哪个线程出了异常？",
+      "category": "Java并发",
+      "expectedPoints": [],
+      "followUp": [],
+      "difficulty": "hard",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    }
+  ],
+  "currentIndex": 0,
+  "currentRound": "question",
+  "completed": false,
+  "report": null
+}

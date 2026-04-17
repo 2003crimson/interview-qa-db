@@ -1,0 +1,67 @@
+{
+  "id": "59280ecc-30e9-4cf7-b6a2-99a95e5e5baf",
+  "createdAt": "2026-04-14T21:08:47.673Z",
+  "startTime": 1776200927673,
+  "totalQuestions": 3,
+  "categories": [
+    "Java并发"
+  ],
+  "resumeContent": "",
+  "customDirections": [],
+  "questions": [
+    {
+      "questionId": "java-concurrent-001",
+      "question": "线程的生命周期有哪些状态？状态之间如何转换？",
+      "category": "Java并发",
+      "expectedPoints": [],
+      "followUp": [
+        "WAITING和BLOCKED的区别是什么？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "java-concurrent-004",
+      "question": "ReentrantLock和synchronized的区别是什么？",
+      "category": "Java并发",
+      "expectedPoints": [],
+      "followUp": [
+        "ReentrantLock如何实现公平锁？",
+        "tryLock()的使用场景？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "java-concurrent-003",
+      "question": "synchronized的锁升级过程是什么？",
+      "category": "Java并发",
+      "expectedPoints": [],
+      "followUp": [
+        "为什么重偏向/轻量级锁需要废弃？",
+        "Mark Word的结构是什么？"
+      ],
+      "difficulty": "hard",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    }
+  ],
+  "currentIndex": 0,
+  "currentRound": "question",
+  "completed": false,
+  "report": null
+}

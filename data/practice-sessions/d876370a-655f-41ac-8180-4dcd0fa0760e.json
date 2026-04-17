@@ -1,0 +1,90 @@
+{
+  "id": "d876370a-655f-41ac-8180-4dcd0fa0760e",
+  "createdAt": "2026-04-16T16:49:29.330Z",
+  "startTime": 1776358169331,
+  "totalQuestions": 5,
+  "categories": [
+    "JVM"
+  ],
+  "resumeContent": "",
+  "customDirections": [],
+  "questions": [
+    {
+      "questionId": "jvm-001",
+      "question": "JVM的内存模型（JMM）是什么？各区域的作用？",
+      "category": "JVM",
+      "expectedPoints": [],
+      "followUp": [
+        "为什么要分新生代和老年代？",
+        "逃逸分析是什么？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": "123",
+      "aiComment": "感谢回答。由于AI服务未配置，无法进行详细评价。",
+      "score": 50,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "jvm-mo1lbb4muek",
+      "question": "1）标记-清除（Mark-Sweep）",
+      "category": "JVM",
+      "expectedPoints": [],
+      "followUp": [],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "jvm-mo1lbb4ml25",
+      "question": "3）标记-整理（Mark-Compact）",
+      "category": "JVM",
+      "expectedPoints": [],
+      "followUp": [],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "jvm-mo1lbb4mseh",
+      "question": "2）复制（Copying）",
+      "category": "JVM",
+      "expectedPoints": [],
+      "followUp": [],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "jvm-mo1lbb4mkq8",
+      "question": "什么是 Java 中的 JIT（Just-In-Time）?",
+      "category": "JVM",
+      "expectedPoints": [],
+      "followUp": [],
+      "difficulty": "hard",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    }
+  ],
+  "currentIndex": 0,
+  "currentRound": "question",
+  "completed": false,
+  "report": null
+}

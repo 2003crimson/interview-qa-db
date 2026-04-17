@@ -1,0 +1,1309 @@
+Java  200  _  mianshiya.com
+https://www.mianshiya.com 
+1.  Offer 2.  3. 1  4. AI  AI  5. 1  1 
+Java 
+Java  Collection  Map   Collection  ListSet  Queue List ArrayList LinkedList  Set HashSet  HashMap  O(1)LinkedHashSet  TreeSet  Queue  ArrayDeque ConcurrentLinkedQueue  DelayQueue  Map HashMap  + /Hashtable   synchronized ConcurrentHashMap  + CAS  LinkedHashMap  LRU TreeMap  1ArrayList  2LinkedList  3HashMap  ConcurrentHashMap 4 TreeSet / TreeMap 5 LinkedHashMap
+MySQL 
+MySQL  InnoDB B+  1  B+   2 B+  
+
+3  NULL 4  (a, b, c)  a(a,b)(a,b,c) b  5  MATCH AGAINST MyISAM  InnoDB  Elasticsearch  OpenSearch  6  N  index(email(10))   (name, age) select name, age from t where name=? 
+MySQL 
+ SQL   MySQL  ><BETWEENLIKE   (a, b, c) 1 a 2 a  b 3 abc  b  b  c a""  WHERE a = 1 AND b > 2 AND c = 3  b  c   user_id  create_time  create_time  user_id +  
+
+ MySQL 
+ INSERTUPDATE  B+   1 user_id  gender   2 (a, b, c)  a  b  c   3 WHERE YEAR(create_time) = 2023  create_time  4MySQL  B+   IO 5 VARCHAR(255)  10   6 ALTER TABLE ... ALGORITHM=INPLACE, LOCK=NONE  ptonline-schema-change  7information_schema.statistics  
+MySQL 
+MySQL  
+
+Read Uncommitted ""  Read Committed  PostgreSQL  Repeatable Read MySQL  MVCC  InnoDB   Serializable  
+ 
+MySQL 
+MySQL Repeatable Read  1 2 MVCC 
+
+---- MySQL  InnoDB Gap Lock+   
+
+ SELECT @@transaction_isolation;
+
+--
+
+REPEATABLE-READ
+
+ Web    
+
+MySQL  count(*)count(1)  count() 
+
+count(*)
+
+
+
+count(1)
+
+
+
+ count(
+
+)
+
+
+
+
+
+count(*)  null MySQL   InnoDB 
+
+count(1)  count(*)  1   count(*) "1"
+
+
+
+ count(
+
+)
+
+not null
+
+null  count(*)  count(email)  email 
+
+
+
+1 count(*) 
+
+2 count(1)  count(*) 
+
+3
+
+ count(
+
+)
+
+
+
+ count(*)  ORM  count(1)   count(id)  id 
+
+
+  1   2   I/O  3  user_id  16  
+
+4  order_id  8  MySQL   Sharding Key   ShardingSphereMyCat  SQL + 
+ ES  
+Redis 
+ Redis  Redis  1Session  Spring Session + Redis  2 SETNX  RedLock   3ZSet  4 List  RocketMQKafka   5 Lua  1  
+
+RDB  AOF  
+Redis 
+Redis  String INCR  
+
+List LPOP/RPOP  LPUSH/RPUSH  Set O(1)  Sorted Set Set  score ZADD ZRANGE  score member  Hashfield value   field  StreamGeoBitmap 
+
+ Redis 
+ Redis  Lettuce Spring Boot 2.0  Netty   Jedis   Lettuce  Spring Data Redis API  ReactiveRedisTemplate   RedisTemplate 
+@Bean public RedisConnectionFactory redisConnectionFactory() {
+return new LettuceConnectionFactory(new RedisStandaloneConfiguration("localhost", 6379)); }
+ Lettuce  API  Future  Netty  RedisTemplate  1Lettuce  LettucePoolingClientConfiguration  2 key  3 SSL 
+ TCP 
+TCP  ISN 1 SYN=1, seq=x  2 SYN=1, ack=x+1, seq=y 3 ACK=1, ack=y+1  TCP  ESTABLISHED TCP  
+
+"" socket    NginxRedis  TIME_WAIT   SO_REUSEADDR  tcp_tw_reuse      TCP  
+TCP 
+TCP  TCP  ""  10000  10000   
+
+1 ACK ""  2 ACKTCP   3""  Reno  Cubic  4  HTTP  TCP  HTML   UDP
+TCP ""
+TCP  UDP 
+TCP  UDP  TCP   HTTP   UDP   UDP  WebRTC 1TCP  2UDP  DNS DHCP  IP  3TCP  20 UDP  8  
+// UDP 
+DatagramSocket socket = new DatagramSocket(); byte[] data = "hello".getBytes(); InetAddress addr = InetAddress.getByName("127.0.0.1"); DatagramPacket packet = new DatagramPacket(data, data.length, addr, 8080);
+ socket.send(packet); //
+// TCP 
+Socket socket = new Socket("127.0.0.1", 8080);
+ OutputStream out = socket.getOutputStream();
+out.write("hello".getBytes()); //
+ TCP UDP
+
+ TCP 
+TCP   SYN  seq=x"" ACK=x+1  SYN=y "" SYN+ACK   ACK=y+1  SYN_SENT  ESTABLISHED LISTEN  SYN_RCVD  ESTABLISHED SYN  5  1    SYN ACK ACK    NginxRedis  listenSYN   somaxconn  tcp_max_syn_backlog
+ ACK  SYN+ACK ACK
+ TCP 
+TCP   FIN  ACK   FIN  ACK 2MSL    TCP  FIN  1 FIN 2 ACK FIN_WAIT_2 CLOSE_WAIT 3 FIN 4 ACK TIME_WAIT
+
+TIME_WAIT  ACK  FIN  2    TIME_WAIT  SO_REUSEADDR 
+TCP 
+TCP    ACK  "" RTORetransmission TimeoutTCP  RTT   RTO 200msRTT  500msRTO   1 2ACK  3 ACK  
+
+ 15 TCP  TCP  IP  
+TCP/IP 
+TCP/IP   1 Wi-Fi  MAC  IP  MAC  2  IP  IP ICMP ARP  3 TCP  HTTPUDP  DNS  4 HTTPHTTPSFTPSMTP 
+ HTTP  TCP  IP  
+
+   Spring Cloud  Redis  Redis    1 2 +  3
+
+ HystrixSentinel  
+MyBatis  #{}  ${} 
+#{}  ${}  #{} MyBatis  SQL  #{}  ?  PreparedStatement  set  SQL  SQL 
+<select id="getUser" resultType="User"> SELECT * FROM user WHERE id = #{id}
+</select>
+ SELECT * FROM user WHERE id = ?  ${}  SQL  SQL 
+ORDER BY ${columnName}
+ ${columnName}  id; DROP TABLE user  ${}    #{}  ${}  ${}  1 #{}  2 ${}  3 ${}  in 
+
+  1 Spring  BeanFactory  MyBatis  2  if-else 3 """""MVC" 
+
+ 23 GOF  
+
+""  1  if-else  switch   "mysql"  MySqlDriver  "redis"  RedisClient  2  new  3   JSON  XML  
+public class ParserFactory { public static Parser create(String type) { if ("json".equals(type)) return new JsonParser(); if ("xml".equals(type)) return new XmlParser(); throw new IllegalArgumentException("Unknown type"); }
+}
+ new    
+
+  1Subject 2
+
+ Spring  ApplicationEvent  Swing  
+interface Observer { void update(String message);
+}
+class Subject { private List<Observer> observers = new ArrayList<>(); private String state;
+public void setState(String state) { this.state = state; notifyObservers();
+}
+private void notifyObservers() { observers.forEach(o -> o.update(state));
+} }
+ 
+
+
+  1  ->  ->  2   3  isDebug()   Spring  JdbcTemplate  SQL  AbstractList  addAll  add  add   
+
+abstract class ProcessTemplate { public final void execute() { validate(); process(); log(); }
+
+abstract void validate(); abstract void process();
+
+void log() { System.out.println("default log"); } }
+
+class MyProcess extends ProcessTemplate {
+
+ void validate() { /*
+
+*/ }
+
+ void process() { /*
+
+*/ }
+
+}
+
+
+
+
+
+" if-else  switch " 
+
+ 
+
+ 1 2  CSVExcelPDF  3
+
+Spring     Resource
+
+ClassPathResource FileSystemResource
+
+UrlResource 
+
+public interface Strategy { void execute();
+}
+public class Context { private Strategy strategy;
+public void setStrategy(Strategy strategy) { this.strategy = strategy;
+}
+public void run() { strategy.execute();
+} }
+
+ Spring  IoC map key   strategies.get("alipay").execute()
+
+   Web  Filter Spring Security  Filter    1    next   next.handle()
+public abstract class Handler { protected Handler next; public void setNext(Handler next) { this.next = next; } public abstract void handle(Request request);
+} public class Level1Handler extends Handler {
+public void handle(Request request) { if (request.getType() == "type1") {
+ System.out.println("Level1 ");
+} else if (next != null) { next.handle(request);
+}
+
+} }
+ Netty  ChannelPipeline
+Java 
+ Java  Thread  Runnable  Thread   1 new Thread run   Java  Thread 
+
+new Thread() {
+
+public void run() {
+
+ System.out.println("
+
+");
+
+}
+
+}.start();
+
+2 Runnable  Thread  Thread ThreadPoolExecutor
+
+  Runnable task = () -> System.out.println(" Runnable ");
+new Thread(task).start();
+
+3 Callable + FutureTask   Callable FutureTask 
+
+Callable<Integer> call = () -> { return 42;
+}; FutureTask<Integer> future = new FutureTask<>(call); new Thread(future).start();
+ Integer result = future.get(); //
+ new Thread Executors   ThreadPoolExecutor
+ MyBatis-Plus MyBatis 
+MyBatis-Plus  MyBatis  MyBatis   XML MyBatis-Plus  SQL   CRUD  Mapper  BaseMapper insert deleteByIdselectList  1 XML 90%  2 QueryWrapper  WHERELIKEIN  SQL
+
+3/
+QueryWrapper<User> qw = new QueryWrapper<>();
+ qw.eq("status", 1).like("name", " ");
+userMapper.selectList(qw);
+ MyBatis  MyBatis-Plus  SQL  PageHelper  MP SQL   XML   MP 
+
+   Kafka  RocketMQ 
+
+ Redis  Set  Sorted Set  Redis  ID  INCR  Redis  MySQL  TiDB  1 2 Redis  3  Redis 
+Redis  Set SADD  SREM    key user_id % 16  16  key 
+ Java 
+ Java  1 int[1000] JVM  1000  int  Node   next  2 get(i)  O(1) base address + offset   get(i)  O(n) 3 O(n)O(1)   LinkedList  ArrayList 
+ // ArrayList
+List<Integer> list = new ArrayList<>();
+ list.add(0, 1); // // LinkedList   List<Integer> linked = new LinkedList<>();
+linked.add(0, 1); //
+4 1-2 nextprev
+Java  HashMap 
+HashMap thresholdcapacity loadFactor 0.75 16 16 * 0.75 = 12 12  rehash   2 JDK 8   hash  hash & oldCap  0  0  +  
+
+ put  put  HashMap   ConcurrentHashMap   rehash
+ HashMap  Java  2  n 
+HashMap  2  n  hash & (capacity - 1)  2^n  %   hash % capacity  capacity  163264  capacity - 1  150b1111310b11111 1 &    16  32 2  hash & oldCapacity  JDK 8   100  O(n) 1 2  &  % 2 3
+ Java  HashMap  0.75
+load factor HashMap  0.75  1 0.5 2 0.9 HashMap  O(1) 0.75   JDK  0.75  8    0.75
+public HashMap() { this.loadFactor = 0.75f;
+}
+ rehash 1000  0.75  1000 / 0.75  1333  2  2048
+
+ JDK 1.8  HashMap 
+JDK 1.8  HashMap   O(1)  O(n)  8 64  O(log n) 6  8  6   8   put  key   HashMap  key  hashCode() 1 O(n)
+JDK 1.8  HashMap 
+JDK 1.8  HashMap   bin   8    64   hash JDK 1.8  (n - 1) & hash  key  hashCode  1616 key  hashCode   Integer 1.8   + oldCap 
+
+ putVal  treeifyBin  
+ HashMap  O(n)  O(log n)
+Java  ConcurrentHashMap 1.7  1.8 
+ConcurrentHashMap " CAS + synchronized "1.7  1.8   1.7  Segment Segment  ReentrantLock  16  Segment  16 Segment  ReentrantLock   1.8 Segment CAS + synchronized Node /  synchronized  volatile   1.7  O(n)1.8   8  64 O(n)  O(log n) 1.8 "" 
+
+
+CPU  1Java JVMOOM 2HashMap ConcurrentHashMap 3Linuxfork() Javanew Thread()pthread_create 4CPU TLB
+
+TomcatHTTP 
+ Java 
+ Java  Thread.State  6   1NEW start()  2RUNNABLE start()  CPU  JVM  3BLOCKEDsynchronized /  4WAITING wait()  join()  LockSupport.park()   5TIMED_WAITING sleep(long)  wait(long)  join(long)  parkNanos 
+
+6TERMINATED
+ Java JVM  WAITING   Java 
+ Java 
+  ThreadPoolExecutor  1 2 3 4 RejectedExecutionException
+
+FixedThreadPool CachedThreadPool ScheduledThreadPool  Timer   Dubbo  Tomcat  Dubbo   Executors  ThreadPoolExecutor 
+
+ Java 
+
+CPU  IO 
+
+CPU 
+
+  JVM   CPU
+
++1
+
+Runtime.getRuntime().availableProcessors()
+
+
+
+IO  IO  CPU  CPU ""  = CPU * (1 +  /  )  CPU * 2 
+
+//  CPU 
+int corePoolSize = Runtime.getRuntime().availableProcessors() * 2; ExecutorService executor = Executors.newFixedThreadPool(corePoolSize);
+ Executors  newFixedThreadPool   OOM ThreadPoolExecutor   ForkJoinPool   HTTP 
+
+Java 
+JDK   1 AbortPolicy  RejectedExecutionException  
+
+2 CallerRunsPolicy  "" Netty  Tomcat  3 DiscardOldestPolicy   LinkedBlockingQueue   4 DiscardPolicy  
+ RejectedExecutionHandler  
+ Java 
+Java  JUC    ThreadPoolExecutor  CPU IO   2 * CPU  RejectedExecutionHandler  CallerRunsPolicy    ReentrantReadWriteLock   synchronized   Semaphore QPS  100 permit  100  Semaphore acquire release  CountDownLatch  CyclicBarrier   3 
+
+  ConcurrentHashMap
+
+Collections.synchronizedMap
+
+1.8  CAS + synchronized 
+
+
+
+Synchronized  ReentrantLock 
+synchronized  JVM  ReentrantLock  JDK  API  lock()  unlock() try-finally  1ReentrantLock  A B  synchronized  2ReentrantLock synchronized   3ReentrantLock  Condition  synchronized  wait/notify 4 synchronized  ReentrantLock 
+
+ synchronized ReentrantLock
+ Java 
+
+ synchronized  1 AtomicInteger  AtomicReference   CAS  synchronized  KafkaNetty  2ConcurrentHashMap  segment   ID  3synchronized  JDK 1.6   ReentrantLock  Condition   finally  unlock 4 ReentrantReadWriteLock "" JDK 8  StampedLock  
+ AQS 
+AQS AbstractQueuedSynchronizer Java  ReentrantLock SemaphoreCountDownLatch 
+
+ volatile  int  state  CAS   state  CLH  Node   AQS  tryAcquire  tryRelease  1 state ReentrantLock 2 Semaphore  3
+ AQS  JDK  
+ Java  CASCompare-And-Swap
+CASCompare-And-Swap Java  CPU  x86  cmpxchg  V A  B V   A  V  B Java  Unsafe  AtomicInteger  AtomicLong   incrementAndGet()  CAS  1
+1ABA   A  B  ACAS  AtomicStampedReference 2 CPU 3  synchronized
+
+
+
+private AtomicInteger count = new AtomicInteger(0);
+
+  count.incrementAndGet(); //
+
+CAS
+
+ ConcurrentHashMap  AQS  CAS  
+
+Java  final 
+final  Java  1final  private final  2Java final   final  3 final   
+
+public class FinalFieldExample { final int x; int y;
+public FinalFieldExample(int x, int y) {
+ this.x = x; // final  this.y = y; //
+} }
+ this x  final  final  volatile  synchronized
+
+ Java  ThreadLocal  key 
+ThreadLocal  key  ThreadLocalMap map  key  ThreadLocal value  ThreadLocal   nullmap  key GC   ThreadLocal  GC  key  key  null value  map " entry"value  remove()  Tomcat 
+
+ key  ThreadLocal  remove()  1 key  ThreadLocal  2 value  remove() 3 Entry  OOM
+
+Java 
+ A  1 2 B   2 1  1 2 3 4A  BB  CC  A   ID  ID  AB  BA   tryLock  ReentrantLock  5  
+Redis Spring  
+Java  volatile 
+volatile  volatileJVM   1 volatile  
+
+2 volatile  volatile   volatile  i++  volatile   synchronized  AtomicInteger 
+ volatile boolean running = true;  DoubleChecked Locking  volatile   synchronized 
+JVM 
+Java  1 javac .class ""  2 JVM   3JVM  JITJust-In-Time   JVM " + " HotSpot VM 
+ Spring Boot  JIT GraalVM  AOT 
+JVM 
+JVM       native 
+
+   GC   G1ZGC JDK 8   OOM
+ JVM  NIO  ByteBuffer  OutOfMemoryError 
+Java 
+Java  CMS  - Serial Old  G1  JDK 9 "" Region Remembered Set  STW    JDK 11+ZGC  Shenandoah  GB  TB ZGC   +  1ms Shenandoah  
+
+1Parallel Scavenge  2CMS ZGC 
+ G1  ZGC ZGC  Linux 
+Java 
+Java  CMSG1   1-Mark-Sweep  Serial   Full GC 2Copying   Minor GC  ParNew  G1  3-Mark-Compact "-" CMS  Full GC 4Generational Collection 90%  --G1  ZGC 
+ G1  Region""ZGC  Shenandoah  10ms 
+JVM 
+JVM  GC   1  Spark  G1  Parallel GC GC  2  GC  100ms  ZGC  Shenandoah  STWStop-The-World
+
+3  footprint K8s  Java  ZGC   G1   Full GC  4G  Minor GC 
+ GC  Pause Time  Frequency P99  
+ Java 
+ GC  GC   1 jstat -gc  jcmd <pid> GC.run_finalization  Young GC  50ms   2 -XX:+PrintGCDetails  Eden  Old   -XX:MaxTenuringThreshold=1  3 200ms CMS  ZGC  Shenandoah  10ms  32GB 
+//  ZGC 8G
+-XX:+UseZGC -Xmx8g -XX:+UnlockExperimentalVMOptions
+4"" G1 -XX:MaxGCPauseMillis=200 JVM    Arthas  vm.gc  jstat 
+ JVM 
+JVM   -Xms  -Xmx  -Xms2g -Xmx2g -Xmn  1/3  1/2
+
+ G1 -XX:+UseG1GC  -XX:MaxGCPauseMillis=200   ParallelGC-XX:+UseParallelGCZGC -XX:+UseZGC  STW  10ms  JDK 15+ -Xlog:gc*  GC  time,uptime,level,tags  -XX:+HeapDumpOnOutOfMemoryError  dump -XX:HeapDumpPath=/path -XX:+PrintCommandLineFlags   -XX:MaxMetaspaceSize 
+java -Xms4g -Xmx4g -Xmn2g -XX:+UseG1GC -XX:MaxGCPauseMillis=200 \ -Xlog:gc*:gc.log:time,uptime:filecount=5,filesize=100m \ -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/dump MyApp
+ Spring 
+Spring   IoC  Spring  spring-core  spring-beans  springcontext  spring-core   spring-beans  Bean  spring-context  ApplicationContext AOP  spring-aop  @Transactional   spring-core  spring-beans   spring-jdbc  JDBC  try-catch  spring-tx   DAO  Web  spring-web  spring-webmvc  Spring MVC HTTP   Boot   spring-expression  SpEL  #{systemProperties['os.name']}    spring-batch  spring-jms 
+
+ Spring IOC
+Spring IOC  new  ""----  XML  IOC   new Service  Dao DI IOC   UserService  @Service UserDao  @Repository Spring   UserController  @Autowired  UserService
+@Service public class UserService {
+@Autowired private UserDao userDao; }
+ Bean  Web  @Controller  @Component  IOC Mock   Bean 
+Spring  DI 
+DI Spring   Service  Repository Service  new  Repository  DI Spring  Repository "" Service  
+
+ 1 2 setter  3@Autowired   Spring  Bean  JavaBean    @Component @Autowired Spring   MyBatis  SqlSessionFactoryRedis  RedisTemplate DI 
+DI IoC 
+ AOP
+AOP AOP   Spring AOP  JDK  CGLIB  @Around   1Pointcut 2Advice 3Aspect""""
+ Controller  Service  @Transactional  AOP 
+Spring AOP
+Spring AOP  Spring  JDK  CGLIB
+
+JDK  Java  InvocationHandler  Proxy   CGLIB  ASM  final   final  private  class    UserService  UserOperations Spring  JDK  package-private  CGLIB   Spring Boot   CGLIB @EnableAspectJAutoProxy(proxyTargetClass = true) Spring 
+
+Spring  Bean  A  BB  A  Spring  Bean " " 1 singletonObjects  2 earlySingletonObjects   3 singletonFactories    Bean setter Spring  
+prototypeBean   @Lazy 
+Spring 
+Spring  1 A  BB  A Spring  A new  A  singletonFactories A 
+
+2 B A singletonFactories ""A  B  B  3 A  B A  A   
+singletonObjects Bean earlySingletonObjects singletonFactories ObjectFactory  setter  Spring  prototype  @Autowired 
+ Spring 
+Spring  Bean   1 singletonObjects  Bean 2 earlySingletonObjects  3 singletonFactories  ObjectFactory  Bean  AOP  @Transactional  
+A  B  B  A  A  B   A  ObjectFactory  B  A  getEarlyBeanReference BeanPostProcessor  ----  A 
+
+ Spring Bean 
+Spring Bean  1 Bean 2 setter  @Autowired 
+
+3 BeanPostProcessor postProcessBeforeInitialization   AOP  4 InitializingBean  afterPropertiesSet initmethod XML  @Bean(initMethod="xxx") 5BeanPostProcessor  postProcessAfterInitialization   6 singletonObjects getBean  7Bean  Controller  Bean  8 DisposableBean  destroy  destroy-method  
+prototype  Bean  BeanPostProcessor Spring 
+Spring MVC 
+Spring MVC  DispatcherServlet Front Controller   DispatcherServlet   1HandlerMapping  URL  Controller  /user/1  UserController  getById  RequestMappingHandlerMapping  2HandlerAdapter  @RequestMapping   @ResponseBody  3 ModelAndView  ViewResolver  "userView"   Thymeleaf  JSP  @ResponseBody   Jackson  JSON 4 REST API HttpMessageConverter  
+
+Interceptor  Spring Boot   @RestController 
+ Spring 
+Spring  1 Bean   Bean  2 BeanFactory  ApplicationContext  Bean  new XML  Bean 3 AOP Spring  JDK -based Proxy + InvocationHandler  CGLIB @Transactional /  4 JdbcTemplate  SQL -------- RowMapper  5 Spring  ApplicationEvent  @EventListener  
+ AOP +  + 
+Spring ?
+Spring "" PROPAGATION_REQUIRED  PROPAGATION_REQUIRES_NEW 1 REQUIRED  2 REQUIRES_NEW   3 SUPPORTS  4 NOT_SUPPORTED  5 MANDATORY  6 NEVER  7 NESTED  Savepoint  
+
+  REQUIRES_NEW
+ SQL  MySQL 
+ SQL MySQL  8    SQL8.0    JOIN  "" EXPLAIN   InnoDB SELECTInnoDB   redo log  undo log  RR   binlog  crash-safe
+ EXPLAIN 
+MySQL 
+MySQL  InnoDB  MyISAM InnoDB   1InnoDB  MySQL  5.5  MVCC 
+
+2MyISAM  count(*)   3 Memory Archive   InnoDB  MyISAM  
+ InnoDB MyISAM  MyISAM
+MySQL InnoDB 
+IDInnoDB   ID IO  SELECT * FROM users WHERE id = 1 id  SELECT * FROM users WHERE name = 'Tom' name  name  id  B+ name  name + idB+  int bigint 1 2
+
+3""
+UUIDB+
+MySQL 
+ InnoDB    (name)  name  email  email  name   ID ID  1 B+  IO  2 SELECT id, name FROM users WHERE name = 'Tom'  id  name  3 (name, email)  
+""
+MySQL 
+MySQL    orders (status, create_time, user_id) 
+SELECT user_id FROM orders WHERE status = 1 AND create_time > '2023-01-01';
+ user_id    1 SELECT amount  2  IO 3 B+ 
+
+ Elasticsearch  MySQL  MySQL   ES
+MySQL 
+ICP MySQL 5.6  ICP   Server  WHERE    ICP  
+CREATE TABLE users ( id int primary key, name varchar(50), age int, city varchar(20)
+);
+-- 
+ALTER TABLE users ADD INDEX idx_name_age (name, age);
+
+SELECT * FROM users
+ WHERE name LIKE ' %'
+AND age > 30;
+name  name  age  ICP  age > 30 "" idx_name_age  age <= 30  
+
+ ICP ---- InnoDBMyISAM   Extra  Using index condition 
+MySQL 
+ WHERE YEAR(create_time) = 2023 B+ varchar MySQL  (a,b,c)  b=1 and c=2  like  %  LIKE '%abc'   EXPLAIN  SQL type  key  Extra   type  range  ref  const key  NULL   Extra  Using index  Using filesort  Using temporary 
+ slow query log  pt-query-digest  SQL  
+MySQL 
+ 10   INSERTUPDATE  DELETEMySQL  B+  I/O  nameemailphoneagecity   5  B+   ----  5  city  age (city, age) 
+
+
+ MySQL  B+ 
+MySQL  I/O B+   1B+  3  B+  2~3  IO 2 WHERE id BETWEEN 100 AND 200  key 3B+  MyISAM  InnoDB  B+ InnoDB  IO B   key 
+ MySQL 
+MySQL 
+ MySQL  1   2 InnoDB  MVCC  undo log undo log   ibdata1  3  5  SQL Thread   RDS  30  4  OOM ORDER BY  GROUP BY  5 mysqldump  REPEATABLE READ  FLUSH TABLES WITH READ LOCK  --single-transaction 
+
+ 30  information_schema.innodb_trx  
+
+  1 A  B  "" A  B  2  A  age=20 B  25  A  age   3 A  id > 10  5  B   A  6 "" 
+ MySQL InnoDB    MVCC 
+
+MySQL 
+MySQL    InnoDB  SX S  S  X  X   Gap Lock"" WHERE id > 10 AND id < 20 InnoDB  (10,20)  Next-Key Lock RR   ISIX"" S  X   AUTO_INCREMENT INSERT  1 2 3Next-Key Lock + RR  4
+
+MySQL 
+
+ MySQL   1  MySQL  SELECT ... FOR UPDATE  SELECT ... LOCK IN SHARE MODE    2  version  version 
+UPDATE goods SET stock = stock - 1, version = version + 1 WHERE id = 1001 AND version = 1;
+ 0 version   Redis  3  
+MySQL 
+MySQL    Deadlock found when trying to get lock      information_schema.innodb_lock_waits innodb_trx SHOW ENGINE INNODB STATUS    ""  
+
+ MySQL  
+ MySQL  EXPLAIN 
+EXPLAIN  SQL  MySQL   1type  systemconsteq_refref  rangeindexall range all  2key  NULL  possible_keys   3rows  10  10  4Extra  Using filesort  Using temporary    ORDER BY Extra  Using filesort B+  
+ WHERE JOIN    Extra  Using index  
+MySQL  SQL 
+SQL  1  SQL   100ms  SQL  explain  type  ALL index   range  refExtra  Using filesort  Using temporary  
+
+ user_id  create_time  (user_id, create_time)   user_id  create_time
+-- 
+SELECT * FROM orders WHERE user_id = 123 AND create_time > '2023-01-01';
+-- 
+CREATE INDEX idx_user_time ON orders(user_id, create_time);
+ text   ShardingSphere  MyCat  join   Redis 
+ MySQL 
+MySQL    binlog I/O   binlog  relay log SQL  relay log
+ MySQL  ShardingSphere  MyCat    binlog  binlog  row  statement  
+ MySQL 
+ 
+
+1    SHOW SLAVE STATUS
+
+Seconds_Behind_Master
+
+relay_log
+
+ SQL  delete 
+
+
+
+2  10w  SQL  MySQL 5.7 8.0 
+
+3  TDDLShardingSphere  hint 
+
+4  30 IO  SQL   GTID 
+
+MySQL 
+ MySQL  LIMIT offset, size  offset  LIMIT 1000000, 20  100  20   offset   ID where 
+SELECT * FROM orders WHERE id > 1000000 ORDER BY id LIMIT 20;
+ O(log n) " N " ""  Redis ZSET  score  Feed   1 offset  2 where +  limit offset 3
+
+Redis 
+Redis ""   Java  Map Redis  I/O   epollLinux socket  Tomcat  Redis    KEYS *   SCAN  Redis  C  SDS  O(1)  Pipeline RDB  fork " "
+ + I/O  +  +  Redis  10w+ QPS
+ Redis 6.0 
+Redis  I/O     10Gbps Redis  CPU I/O   +  Redis   I/O  socket  CPU   Redis 6.0   I/O  io-threads  4 4 
+
+socket   // redis.conf
+io-threads 4 io-threads-do-reads yes
+"" 4  1 I/O  26.0  I/O 3
+Redis  hash 
+Redis  hash  Java  Map<String, String>  Map<String, Object>  key   1 hash  HSET user:1001 name "Tom" age "25"  HGET user:1001 name  2Redis  hash  ziplist  64  512  hashtable  O(1) 3 hash  Redis   pricestocktitle  string  JSON   4Redis  hash  hash key user:1001:profile   user:1001:settings
+ hash 
+
+Redis  Memcached 
+Redis  Memcached  1Memcached  key-value Redis  StringHashList SetSorted SetStream  HINCRBY  2Memcached Redis  RDB  AOF   3Memcached Redis  failover  Redis Cluster  4Memcached Redis 6.0 6.0+  I/O 5 Redis  LRU  key  TTL  Memcached   Redis Session 
+Redis 
+Redis  MULTI Redis  EXEC 
+
+1 MULTI  2  EXEC  DISCARD  3 EXEC Redis    HSET Redis   MySQL 
+ Lua  Redis  Lua   redisson  Java  Lua  Redis  key
+Redis 
+Redis      CPU  1 key  GET Redis  key  nil key   2Redis  key  10  25  key TTL  " key"  key  key    Redis  Spring Session + Redis  key 
+Redis 
+Redis  key  
+
+1noeviction   2volatile-lru  key  LRU Session   3allkeys-lru  key  LRU  TTL Redis   4volatile-lfu  allkeys-lfu LFU  LRU allkeys-lfu   feed  5volatile-ttl  key key  6volatile-random  allkeys-random   Redis allkeys-lfu  allkeys-lru   noeviction 
+
+Redis  Lua 
+Redis  Lua  key  Lua  EVAL  EVALSHA  EVAL  EVALSHA  SHA1    KEYS  ARGV Redis   Redis  SCRIPT LOAD  EVALSHA  1
+local num = redis.call('GET', KEYS[1]) if not num then return 0 end
+
+if tonumber(num) >= tonumber(ARGV[1]) then return redis.call('DECRBY', KEYS[1], ARGV[1])
+else return -1
+end
+
+2 EVAL 
+
+ EVAL "
+
+" 1 stock_key 10
+
+ 
+
+  
+
+Redis  Pipeline 
+Redis  Pipeline  Redis  "  " 100  100  RTTPipeline    set 1000  key Pipeline  1000  1   QPS  QPS Pipeline MSETHSET   setdelincr Pipeline   Jedis 
+try (Jedis jedis = new Jedis("localhost")) { Pipeline pipeline = jedis.pipelined(); for (int i = 0; i < 1000; i++) { pipeline.set("key:" + i, "value" + i); pipeline.incr("counter"); } List<Object> results = pipeline.syncAndReturnAll();
+}
+1 pipelined()  2 3syncAndReturnAll() 
+Redis  Big Key 
+Big Key  Redis  key  value  String  10MB HashZSet   key 
+
+1 Big Key  2RDB  AOF Big Key  3Redis Big Key  DEL    key Hash   ID  user:score:001  user:score:002  key  value  JSON gzip  CPU    String  field  Hash  
+
+//  hgetall  hash
+
+ List<String> fields = getFields(); //
+
+field
+
+Map<String, String> part = jedis.hgetAll("user:profile");
+
+ redis-cli --bigkeys  Redis  slow log 
+
+ Redis  key 
+ key  key QPS  Redis  CPU   1 redis-cli --hotkeys  Prometheus + Grafana key   proxy  TendisProxy  Codis top N  key 2  Caffeine  Guava Cache  key  1~2   Redis 3 key  key  key_1key_2   banner 4Redis  key  Redis Cluster  replica  
+
+5 key  Kafka 
+Redis 
+Redis  1RDB  fork  RDB   Redis  RDB""  2AOF  binlog aof  fsync  appendfsync everysec  1  AOF  RDB    RDB  AOFRedis  AOF AOF  
+Redis  RDB 
+Redis  RDB  fork   1fork  RDB   2Redis  3 Copy-on-Write  key  
+
+ key COW   BGSAVE AOF + RDB  
+
+pid = fork();
+
+if (pid == 0) {
+
+ //
+
+rdbSave()
+
+} else {
+//  event loop
+
+}
+
+ fork   RDB 
+
+Redis 
+Redis    3  5  Redis   2/3     Spring Boot  Redis Sentinel 
+@Bean public RedisConnectionFactory connectionFactory() {
+RedisSentinelConfiguration config = new RedisSentinelConfiguration(); config.setMaster("mymaster");
+ config.setSentinels(sentinels); //
+return new LettuceConnectionFactory(config); }
+  Redis Cluster 
+
+Redis 
+Redis    psync  replication ID  offset  fork  RDB RDB     repl_backlog_buffer    1  REPLCONF ACK   Redis Sentinel  Cluster 
+
+  AOF  min-slaves-to-write
+Redis 
+Redis  16384  CRC16   16384  A  05000B  500110000C  10001~16383  key  MOVED   slot   Gossip     redis-cli -cluster   key  slot  hash tag  key  {user1000}.name  {user1000}.age 
+Redis 
+Redis  1Redis  Gossip   2 6 3  3  4  2 4   2 "" 3 
+
+"" 
+Redis     min-replicas-to-write min-replicas-max-lag
+Redis 
+""Redis  set  set  1 SET resource_name random_value NX PX 30000 NX ""PX random_value  UUID  ID    del Lua 
+if redis.call("get", KEYS[1]) == ARGV[1] then return redis.call("del", KEYS[1])
+else return 0
+end
+" + " 2 Redis ----   Redlock  Redis   +  3 Redisson 
+
+Redis 
+Redis  1  2 set key  expire Redis expire ""  SET key value NX EX seconds 3Redis  ----"" 4 del key  value  UUID get  5Redlock  Martin Kleppmann  Antirez  GC  Redis Cluster +  SET + Lua   ZooKeeper  etcdRedis 
+Redis 
+ key   key  1 value   2 Redis  SETNX   Redlock   id   Guava  Redisson    key    + 300  Caffeine 
+
+""""""  Sentinel 
+Redis 
+ DB   1 DB  Cache Aside Pattern   MySQL  Redis  user:1001 2 DB  DB DB   3  DB  DB  sleep   sleep  4 Binlog   Canal  MySQL  Binlog MQ 
+" DB" 
+
+ Redis 
+
+ Redis  Sorted Set  O(log N) 
+
+1 ZADD leaderboard {score} {player}  memberRedis 
+
+2 Top 10  ZRANGE leaderboard 0 9 WITHSCORES  10   ZREVRANGE
+
+3   ZSCORE leaderboard player
+
+ZRANK leaderboard player
+
+ ZREVRANK 
+
+Redis  Sorted Set  
+
+
+
+// 
+jedis.zadd("leaderboard", 95.5, "player1");
+
+ //
+
+Top 10
+
+Set<Tuple> top10 = jedis.zrevrangeWithScores("leaderboard", 0, 9);
+
+ zset  zset + 
+
+ Redis 
+Redis  HyperLogLog  Bitmap  Redis Module RedisBloom 1 1  1 0  1  2 Redis  RedisBloom  BF.ADD  BF.EXISTS  
+BF.ADD user:exists "user123" BF.EXISTS user:exists "user456"
+ RedisBloom  3 setbit  getbit  key + offset  n   key  key 
+
+ DB 99%  ID  
+Redis 
+Redis  CPU  1 INFO stats  redis-cli --latency  QPS  CPU  key   KEYS  SCAN  2 key  10  hash hash  Redis Hash  slot  3 ZSET O(log N)   LIST +   Redis Streams  4Redis Cluster  key  16384  slot multi-key  slot hash tag  user:{1000}:profile  user:  {1000}:orders 5 Caffeine  Guava Cache Redis  99%  10%  key  80% 
+
+HTTP 1.0  2.0 
+HTTP/2  HTTP/1.1 ""  TCP   1HTTP/1.1  CookieUser-Agent HTTP/2  HPACK   30%  50%  2HTTP/1.1  HTTP/2   TCP  3 main.css  HTML  4 JSCSS    HTTP/2  TCP   HTTP/3  QUIC 
+
+HTTP 2.0  3.0 
+HTTP/2  TCP Stream  HTTP/1.1  TCP HTTP/3  QUIC  TCPQUIC  UDP   ID IP +  Wi-Fi  4G  QUIC  Google  QUIC CloudflareFastly  CDN  HTTP/3   HTTP/3  Nginx   BoringSSL  quiche  UDP 443 
+
+HTTP/2 HTTP/3  
+HTTP  HTTPS 
+HTTP  HTTPS HTTPS  HTTP  SSL/TLS  1 HTTP HTTPS  TCP HTTP  SSL/TLS   HTTP 2 HTTPS "" CA Let's Encrypt DigiCert 3 TLS  MAC  HTTPS  1-2  RTT TLS 1.3  1-RTT  0-RTT CDN  Google HTTPS Java  HttpsURLConnection  HttpURLConnection Netty  Spring WebFlux  SSLContext 
+ HTTP HTTPS  Nginx +  HTTPS
+TCP 
+
+TCP ""   TCP   Netty     1 2 3+  DubboRocketMQ  LengthFieldBasedFrameDecoder   100 TCP  200  MTU  150 + 50  RPC  
+ TCP  TIME_WAIT ?
+TCP  TIME_WAIT   1 ACK  ACK  FIN  TIME_WAIT  2MSL ACK 2TCP IPIP  2MSL   MSL  30  2  TIME_WAIT  4   Web  SO_REUSEADDR  TIME_WAIT  socket   TIME_WAIT  NginxTomcat 
+TCP 
+TCP  ACK  "" rwnd  1 2 3 ACK ""  0" "
+
+cwnd rwnd   cwnd
+OSI 
+OSI   101 2Ethernet MAC 3IPIP 4TCPUDPTCPUDP  5RPC 6 7HTTPFTPDNSWeb TCP/IP""OSI 
+CookieSessionToken 
+ HTTP  Cookie  Set-Cookie  Cookie   JS  HttpOnly XSS  session id  Session  session  sessionId  key  Redis sessionId  Cookie  id  session  Token JWT Token  Header  Token  1Cookie  2Session  Cookie  id 3Token   JWT  header.payload.signature  Base64  Session Session  Token
+
+SelectPollEpoll 
+selectpoll  epoll  Linux  I/O   1select  fd  1024  fd fd   fd  2poll  select  fd 1024  fd  3epoll  fd epoll_ctl  fd   fd epoll_wait  fd NginxNetty 
+select  poll "" epoll "" epoll 
+
+CPU   "" 32  0  4GB    MMU 
+
+ Java    0x1000MMU 
+ 4KB
+ Redis 
+Redis CPU  1 Key  Key  Key  rediscli --bigkeys  Redis  Key   Hash  Hash 2 Caffeine  Redis  3RDB fork AOF  IO   RDB  AOF AOF appendfsync everysec 4Spring Boot  Lettuce  Jedis   Netty  Redis Cluster  Tair  Redis  Key 
+
+ 
+
+1 Nacos   2 Nacos   3Spring Cloud Config  Spring Boot Apollo  Nacos   4 
+ZooKeeper  
+ Spring Boot
+Spring Boot  Spring  XML  MVC  Web  Spring  DispatcherServlet  Spring Boot  @SpringBootApplication main  SpringApplication.run()   spring-boot-starter-web Tomcat  Spring MVC  "" /static  Tomcat  8080     application.properties application.yml  spring-boot-starter-parent  POM  MyBatisRedisKafka starter   Spring Cloud + Spring Boot   Spring Spring 
+
+Spring Boot 
+Spring Boot  Spring  1 spring-boot-starter-web  TomcatSpring MVC   XML  @Configuration  @ConditionalOnClass   2Starter Kafka  spring-kafka-starter    spring-boot-starter-data-jpa spring-boot-starteractuator  3 WAR  Tomcat java -jar  TomcatJetty  UndertowServlet  4Actuator  /actuator/health  /actuator/metrics  JVM   Prometheus  Grafana  5 application.yml  spring.profiles.active=prod   
+
+@SpringBootApplication public class App {
+public static void main(String[] args) { SpringApplication.run(App.class, args);
+} }
+
+   @Configuration @EnableAutoConfiguration  @ComponentScan
+
+Spring Boot  main  web 
+
+Spring Boot  Web  main  SpringApplication.run()  
+
+main  SpringApplication.run(Application.class, args)   TomcatJetty  META-INF/spring.factories  
+
+ Web  AnnotationConfigServletWebServerApplicationContext  Web  ServletWebServerFactoryAutoConfiguration  classpath  Web  Tomcat
+
+1 ServletWebServerFactory  Bean
+
+2  WebServer
+
+TomcatServletWebServerFactory
+
+3 webServer.start() 
+
+@SpringBootApplication public class App {
+
+public static void main(String[] args) { SpringApplication.run(App.class, args);
+} }
+ +  +  new Tomcat  configure connector  spring-boot-starter-web  Web  8080
+ Spring 
+Spring  IoC  refresh()  12   BeanFactory  <bean>  @Component  bean  BeanFactory  BeanPostProcessor  ApplicationListener   bean  AOP   bean  finishBeanFactoryInitialization  bean @PostConstruct  Spring   ContextRefreshedEvent Tomcat      AbstractApplicationContext refresh()
+public void refresh() { prepareRefresh(); ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory(); prepareBeanFactory(beanFactory); postProcessBeanFactory(beanFactory); invokeBeanFactoryPostProcessors(beanFactory); registerBeanPostProcessors(beanFactory); initMessageSource(); initApplicationEventMulticaster();
+  onRefresh(); // Web
+registerListeners(); finishBeanFactoryInitialization(beanFactory); finishRefresh(); }
+ BeanFactory bean   bean  
+
+
+  ACID 1 TCCTry-Confirm-Cancel TryConfirm Cancel 2 RocketMQ  DB  3Seata AT  @GlobalTransactional   undo_log  4 XA "" OK  
+
+ Spring Boot  starter
+
+Spring Boot  starter 
+
+ Redis spring-boot-starter-data-redis  Lettuce  JedisSpring Data Redis 
+
+1 starter  spring-boot-starter-xxx   mybatis-spring-boot-starter
+
+2starter  pom.xml  autoconfigure 
+
+   spring-boot-autoconfigure
+
+RedisAutoConfiguration
+
+  RedisTemplate LettuceConnectionFactory
+
+3 @ConditionalOnClass  @ConditionalOnMissingBean   classpath  Jedis.class  Jedis 
+
+4 starter xxx-spring-boot-starter  autoconfigure xxx-
+
+ spring-boot-autoconfigure
+
+META-
+
+ INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports
+
+
+
+ spring-boot-starter-web  TomcatSpring MVCJackson spring-boot-starter-jdbc  DataSource  JdbcTemplate
+
+ Seata
+Seata  XA    TCTransaction CoordinatorTMTransaction ManagerRMResource ManagerTC TM RM  TM  TC  ID ID RM   undo_log  SQLTC  undo_log  Spring Cloud Alibaba  @GlobalTransactional   AT TCC Saga AT  
+
+ 1  Redis "" 2   Spring Cloud  Dubbo ""    Java  
+
+"""" 
+
+Nginx   1 2:1:1 Kubernetes  kube-proxy  2gRPC   3 WebSocket  HAProxy  4 IP  hash IP  session     Redis ClusterCassandra 
+
+
+HTTP  RPC 
+HTTP  RPC  1HTTP  HTTP/1.1HTTP/2 RPC  Dubbo  Netty + gRPC  HTTP/2   2HTTP  RESTful  URL + GET/POST JSON  RPC  userService.getUser(1001)   3RPC  Protobuf   HTTP  30%  gRPC  4 API  HTTP + REST + JSON  RPC  Dubbo  gRPC
+
+ HTTP  RPC 
+
+""    1 HystrixSentinel   fallback  2  3""" " 
+@SentinelResource(value = "getRecommend", fallback = "getDefaultRecommend") public List<Item> getRecommend() {
+return remoteCallToRecommendService(); }
+ public List<Item> getDefaultRecommend() { return Collections.emptyList(); // }
+
+
+
+ 1 5   2 5   3 HystrixSentinelResilience4j  Resilience4j 
+
+CircuitBreakerConfig config = CircuitBreakerConfig.custom()
+
+  .failureRateThreshold(50) //
+
+50%
+
+  .waitDurationInOpenState(Duration.ofMillis(5000)) // 5
+
+.build();
+
+4 Sentinel   
+
+
+  1 MySQL  version   2 Redis SET key value NX PX milliseconds value   ID Lua " value -  - "Redisson   3 ZooKeeper Watch ZooKeeper   Curator  Redis      
+
+ Redisson  Curator
+MyBatis  Hibernate 
+MyBatis  Hibernate  Java  ORM  Hibernate  SQL Session.save(entity)   Hibernate  MyBatis SQL  XML  Java   SQL  MyBatis  SQL  1Hibernate HQL  2MyBatis  SQL 3Hibernate MyBatis  Hibernate SQL MyBatis  SQL <if>  <choose> 
+ SQL  Hibernate SQL MyBatis
+
+
+  1   2 500020003000 "" 3 ABA B  Kafka  RocketMQ   Elasticsearch
+ 
+
+ 1   RabbitMQ  ActiveMQRocketMQ  2 Topic Kafka  Redis Pub/Sub  Kafka " + " ----
+
+ RocketMQ  Topic + Consumer Group  
+
+  1
+public class Singleton { private static final Singleton INSTANCE = new Singleton(); private Singleton() {} public static Singleton getInstance() { return INSTANCE;
+
+} }
+2 synchronized  3DCL volatile   4  getInstance  Holder 
+public class Singleton { private Singleton() {} private static class Holder { static final Singleton INSTANCE = new Singleton(); } public static Singleton getInstance() { return Holder.INSTANCE; }
+}
+5Effective Java 
+public enum Singleton { INSTANCE;
+}
+DCL  volatile 
+
+ MySQLConnection PostgreSQLConnection  Connection  DatabaseConnectionFactory  new 
+public class ConnectionFactory { public Connection getConnection(String type) { if ("mysql".equals(type)) return new MySQLConnection(); if ("pg".equals(type)) return new PostgreSQLConnection(); throw new IllegalArgumentException(); }
+}
+ MySQL + Redis PostgreSQL + Memcached  
+
+interface DaoFactory { Connection createConnection(); Cache createCache();
+} class MysqlRedisFactory implements DaoFactory {
+public Connection createConnection() { return new MySQLConnection(); } public Cache createCache() { return new RedisCache(); } }
+1 2 3  Spring  BeanFactory  Java EE  
+
+  Broker  broker  RabbitMQ  publisher confirm Kafka  acks  all  leader  ISR    broker RabbitMQ  durable durable deliveryMode=2Kafka  producer  ack  broker ""  offset Kafka  enable.auto.commit=false  sync  async  
+
+KafkaRabbitMQRocketMQ  
+
+ +  + RedisID RedisID "orderNo:123"key 1SETNX RediskeymessageIdvalue 2  3  DB "100""600" RocketMQ+ 
+
+""  1 RocketMQ    2 key  ID  key queueKafka  RocketMQ   3 key 
+ // RocketMQ
+Message msg = new Message("TOPIC", "TAG", "ORDER_ID_001", body); producer.send(msg);
+ ORDER_ID_001  key 4  trade-off
+
+  +   binlog  
+
+"" 1  10w     2k  2  3  10   Kafka  consumer group  3  topic   4  HDFS  
+Kafka  poll(500)  enable.auto.commit=false  
+
+
+
+1Push Kafka  consumer pull  push  2Pull RocketMQ  pull  3Kafka  pull"" RabbitMQ  direct  push QoS  push pull  broker    pull  push + 
+
+RocketMQ 
+RocketMQ " + "  1  Broker   2 Broker  30  15  7  3  check   4   Apache Kafka  + 2PC Kafka Streams   Kafka RocketMQ  Seata  Saga  
+
+
+  1 Spring  AOP @Transactional Spring   bean 2 Dubbo   3 Hibernate  get    JDK  Proxy + InvocationHandler  CGLIB 
+"" 
+ MyBatis 
+MyBatis  SqlSession  SqlSession  SQL 1 HashMap keyMappedStatement ID +   commitupdate  close 2 SqlSession RedisEhcache  Mapper   Serializable <cache/>  Mapper   A B   TTL   MappedStatement  cache CachingExecutor  cache  BaseExecutor 
+
+ Redis   MyBatis 
+ MyBatis 
+MyBatis    Executor StatementHandlerParameterHandler  ResultSetHandler  intercept  1 Interceptor  intercept  SQL  2 @Signature  3 mybatis-config.xml 
+
+@Intercepts({
+
+@Signature(type = StatementHandler.class, method = "prepare", args =
+
+{Connection.class, Integer.class})
+
+})
+
+public class SqlCostPlugin implements Interceptor {
+
+@Override
+
+public Object intercept(Invocation invocation) throws Throwable {
+
+long start = System.currentTimeMillis();
+
+try {
+
+return invocation.proceed();
+
+} finally {
+
+ long cost = System.currentTimeMillis() - start;
+
+System.out.println("SQL
+
+" + cost + "ms");
+
+}
+
+}
+
+}
+
+ Plugin.wrap   @Signature   interceptorChain.pluginAll()  new Executor  plugin 
+
+
+ 2000 QPS   1 1  100  1   1  10ms  100  2  100  200  2 1  10  100ms  10  Redis + Lua Sentinel  3""  burst  4 100  200  200 Guava RateLimiter   Redis  INCR  EXPIRE   Sentinel 
+Kafka  Zookeeper 
+Kafka  Zookeeper Topic   Zookeeper Kafka  1Broker  Broker  Zookeeper  /brokers/ids   Broker  Broker 
+
+2Controller Kafka  Controller  Zookeeper  /controller  Broker  Controller 3Topic Topic  Broker Zookeeper  /brokers/topics  Broker  4ACL  Zookeeper  Kafka 2.8  KIP-500 KRaft  Zookeeper Controller  Raft  Zookeeper KRaft  GA  KRaft 
+ Zookeeper "" Zookeeper KRaft 
+Kafka Zookeeper
+Kafka  Zookeeper  broker controller ACL   1 Kafka  Zookeeper  session timeout controller  2 Zookeeper  ZAB  topic  ZK  watch  3Zookeeper  Kafka   ZK  2.8 Kafka  KRaft ---- ZookeeperController  MetadataLog broker  process.roles  quorum.connect  zookeeper.connect   ZK 
+
+ 70%  Confluent  AWS MSK  KRaft 
+RabbitMQ 
+ RabbitMQ  Exchange  Queue  mandatory  1mandatory  broker   2mandatory broker  ReturnSpring AMQP    RabbitTemplate.ReturnCallback  Return   direct exchange routing key  order.create queue  key  
+rabbitTemplate.setMandatory(true); rabbitTemplate.setReturnCallback((message, replyCode, replyText, exchange, routingKey) -> {
+//  DB
+});
+ 
+RabbitMQ 
+RabbitMQ DLX"" 
+
+1 RabbitMQ requeue=false  2TTL  TTL  DLX 3  DLX x-dead-letter-exchange    x-dead-letter-routing-key
+Map<String, Object> args = new HashMap<>(); args.put("x-dead-letter-exchange", "dlx.exchange"); args.put("x-dead-letter-routing-key", "dead"); channel.queueDeclare("normal.queue", true, false, false, args);
+ dlx.exchange  RocketMQ  + ---- 
+
+XML JSON 1 2 3 MySQL  Oracle  DAO   +  +  
+public enum Singleton { INSTANCE; public void doSomething() { /*...*/ }
+}
+ Spring  ApplicationEvent  ContextRefreshedEvent   JDK  CGLIB Spring AOP  JDK  CGLIB  Java  AbstractExecutorService.submit()  MyBatis  SqlSessionSpring  
+ I/O 
+
+Unix  I/O 1 I/O  Java  Socket  read   CPU  2 I/O  socket  NONBLOCK read  EAGAIN CPU  3I/O selectpollepoll  socket  epoll_ctl  fdepoll_wait NginxRedisNetty   4 I/O  SIGIO  5 I/OPOSIX  aio_readLinux  io_uring glibc  aio Java  AIO 
+ epoll 
+ Netty 
+Netty  NIO  API   1 DubbogRPC  RPC  Netty   2APP  BIO  Netty  Channel 3Spring Cloud Gateway  Reactor Netty Netty   4Netty    TCP 
+EventLoopGroup boss = new NioEventLoopGroup(1); EventLoopGroup worker = new NioEventLoopGroup(); ServerBootstrap b = new ServerBootstrap(); b.group(boss, worker)
+.channel(NioServerSocketChannel.class) .childHandler(new ChannelInitializer<SocketChannel>() {
+public void initChannel(SocketChannel ch) {
+
+ch.pipeline().addLast(new SimpleChannelInboundHandler<ByteBuf>() { protected void channelRead0(ChannelHandlerContext ctx, ByteBuf msg) {
+// 
+} }); } }); b.bind(8080).sync();
+ Netty 
+ Reactor 
+Reactor  Java NIO  Selector  1 Reactor   I/O  Redis   CPU  2 Reactor  Reactor  I/O Netty  Reactor  3 Reactor   Reactor  Main Reactor  Accept  Sub Reactor  Nginx  Netty 
+Netty  EventLoopGroup  
+ Netty 
+Netty  zero-copy  CompositeByteBuf  FileRegion   JVM  1 Buffer Netty  CompositeByteBuf  ByteBuf  Buffer 
+
+2Netty  JDK  FileChannel.transferTo()   OS  sendfile  3Direct Buffer JVM  GC   byte[]  KafkaRocketMQ  Netty  
+"" 
+
+ B+   B+   / MySQL  20%  VARCHAR(1000) IO   1 2NULL  3OR 
+ NIO  Netty 
+ NIO NIO  API  ByteBuffer   Channel 
+
+Netty  ByteBuf   Buffer   Netty  LengthFieldBasedFrameDecoder  NIO   Netty  EventLoop Reactor  Channel  EventLoop  NIO  Reactor   
+new ServerBootstrap() .group(bossGroup, workerGroup) .channel(NioServerSocketChannel.class) .childHandler(new ChannelInitializer<SocketChannel>() { protected void initChannel(SocketChannel ch) { ch.pipeline().addLast(new MyBusinessHandler()); } }) .bind(8080);
+Netty  1NIO  2Netty  3 DubboRocketMQ 
+Netty 
+Netty  API  Reactor  BIO  Netty  EventLoopGroup   ByteBuf  GC  newGC  Netty  PooledByteBufAllocator "" CompositeByteBuf  buffer   FileRegion JVM   ChannelPipeline  Handler  
+
+ NIONetty  registerselectdispatch API   epoll  CPU 100% DubboRocketMQgRPC 
+Netty 
+TCP  Netty "" 1 LengthFieldBasedFrameDecoder  body   DubboRocketMQ  length  2 \n  Netty  DelimiterBasedFrameDecoder  Redis  RESP  3 FixedLengthFrameDecoder  30  20  Netty  
+Netty 
+Netty Reactor EventLoop I/O   EventLoopGroup  EventLoop  1 Reactor 2 ReactorI/O  Handler  3 ReactorBoss  acceptWorker  read/write  ChannelPipeline  ChannelHandler   StringDecoder  LoggingHandler   ByteBuf  ByteBufAllocator / PooledUnsafeDirectByteBuf  UnpooledHeapByteBuf  GC 
+
+ Netty  RocketMQDubbo 
+Netty  JDK NIO  Bug
+Netty  JDK NIO  epoll  Bug Bug   Linux  JDK Selector  I/O  CPU  100% Netty  Selector "" 512   1Netty  Selector  Selector  Channel  Selector  Selector  bug   CPU   NioEventLoop  select 
+if (selectedKeys != 0 || oldWakenUp || wakenUp.get() || hasTasks() || hasScheduledTasks()) {
+// 
+} else {
+// ++  if (selectedCnt >= SELECTOR_AUTO_REBUILD_THRESHOLD) { // 512
+ rebuildSelector(); //
+return; } }
+ JDK  DubboRocketMQ  Netty   
+ RocketMQ  Zookeeper  NameServer
+RocketMQ  Zookeeper  NameServer Zookeeper  ZAB   Broker ZK  Kafka   KRaft  NameServer Broker  30  NameServer   Topic NameServer  Broker  
+
+Producer/Consumer NameServer   1Broker  NameServer  2Producer  NameServer  Topic  Broker  3Producer  Broker 
+ NameServer "" RocketMQ 
+ CPU 
+CPU  CPU   1 top  CPU  %Cpu(s)  us sy 80%  2 top  P  CPU  Java  PID 3 top -H -p <PID>  CPU  top  ID TID  TID  16  printf "%x\n" <TID>  jstack  jstack <PID> | grep -A 50 <hex_TID>  RUNNABLE  GC  
+ (.+)+ CPU   JSONJackson/Gson   RUNNABLE   ThreadMXBean  top + jstack   kubectl exec 
+ API 
+API 
+
+ Spring Cloud Gateway  Kong 1 JWT token 401   2 IP  QPS 503 3  ELK  Prometheus 4  REST gRPC 5 path   /user/**  user-service  traceId  
+RabbitMQ 
+RabbitMQ  TTLTime-To-Live  DLX  1 TTL"" 2DLXRabbitMQ  DLX  3""  Spring Boot  RabbitMQ
+// 
+args.put("x-message-ttl", 5000); args.put("x-dead-letter-exchange", "delay.process.exchange");
+  RabbitMQ  RabbitMQ +   RocketMQ  Redis ZSet  
+
+ Redisson ?
+Redisson  Redis  Lua  Redis    Lua  Redis  hash key field  UUID + threadIdvalue  key  field  value   Lua  threadId  0  key  Watchdog 1/3   TTL  RLock rlock = redisson.getLock("order"); rlock.lock();    RedLock  Redis 
+ Java  HashMap 
+HashMap  key  hash  16  0.75 12  key  hash  (n - 1) & hash  1 Node  8  64  O(n) 2 6 hash  3 6  put  hash    /  get   put  ConcurrentHashMapJDK 8  
+SpringBoot 
+SpringBoot   classpath  META INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports
+
+  @ConditionalOnClass   @ConditionalOnMissingBean  spring-boot-starter-data-redis classpath  LettuceConnectionFactory  RedisTemplate  1  spring.factories   2  org.springframework.boot.autoconfigure.AutoConfiguration.imports  Bean  3  @AutoConfigureAfter 
+
+ @EnableAutoConfiguration  NacosMyBatisPlus  starter 
+
+ Springboot 
+
+Spring Boot  run()  
+
+1 SpringApplication  Servlet  Reactive   ApplicationContextInitializer ApplicationListener 2 run()  Web  Web  application.yml  properties
+
+3 ApplicationContext  Web   AnnotationConfigServletWebServerApplicationContext
+
+4 BeanSpring Boot 
+
+  @SpringBootApplication
+
+@ComponentScan
+
+5 Tomcat  onRefresh()  
+
+6 ApplicationReadyEvent 
+
+
+
+public static void main(String[] args) { SpringApplication.run(Application.class, args);
+}
+
+
+MySQL 
+MySQL 2PC InnoDB  redo log  binlog 
+
+redo log binlog  PITR  binlog  InnoDB  1prepare  redo log  PREPARED  binlog  2commit  binlog  InnoDB  commit  redo log  MySQL  undo log  PREPARED  XID  binlog  binlog  XID prepare
+ MGRXtraDB Cluster   binlog 
+MySQL  B+ 
+MySQL  InnoDB  B+  " B+ " InnoDB  16KB bigint 8  6    8 + 6 = 14   16 * 1024 / 14  1170   1170   1KB 16KB  16     1170    1170    1170 * 1170  136   16    136  * 16  2176   B+   B+  IO 
+
+JVM 
+JVM  1 .class  Spring Boot  JVM 2 GC JDK 8   3JIT  HotSpot  GC  4JNI Java  C/C++  NIO  JNI  API
+
+ JNI   OOM 
+
+JVM  OOM
+JVM  OOM  1 -Xmx   List  2 1MB   3 Java 8  CGLIB  OOM 4 ByteBuffer.allocateDirect()  GC  -XX:MaxDirectMemorySize NIO  
+
+// 
+
+for (;;) {
+
+ ByteBuffer.allocateDirect(1024 * 1024); //
+
+1MB
+
+}
+
+ OutOfMemoryError  "Java heap space""Metaspace""Direct buffer memory" 
+
+Java  synchronized 
+synchronized  JVM  monitor  monitor synchronized  monitor  monitor  HotSpot  C++  ObjectMonitor   1   ID CAS  2   CAS  Mark Word  3    Mark Word 64  8 
+
+   synchronized (obj) {
+
+//
+
+monitorenter
+
+monitorexit
+
+   //
+
+ObjectMonitor enter() exit()
+
+}
+
+ monitor  JVM ""
+
+ Java JMM
+Java JMM     1 i++  synchronized  volatile  CAS  2 volatile  3 happens-before  volatile  volatile 
+instance  volatile synchronized  volatile 
+ Java 
+  i++   AtomicInteger  incrementAndGet()  CPU  CAS 
+
+  volatile synchronized  final    volatile synchronized  
+instance  volatile  
+ Java  ABA 
+ABA  CASCompare-And-Swap AtomicInteger  ConcurrentLinkedQueue CAS  1 A CAS A  B A  B  A1   Java    AtomicStampedReference  stamp ABAstamp  012 "" Redis  MVCC  
+ Java 8 PermGenMetaspace
+ Java 7   80  MB OutOfMemoryError: PermGen space  CGLIB  Spring AOP Tomcat   JVM native memory OOM   GC GC   Full GC   -XX:MaxMetaspaceSize    JVM  GC 
+
+ MySQL  B+ 
+MySQL  InnoDB  B+   1 WHERE id = 15   2 IO  16KB 3~4   3  IO  3 
+B+  B ----  BETWEEN 15 AND 25  
+MySQL 
+MySQL  InnoDB  redo logundo log     ACID 1redo log InnoDB   redo log  crash recovery 2undo log  undo log   MVCC undo log  3InnoDB  next-key lock +  
+ 
+MySQL  MVCC 
+
+MVCC MySQL InnoDB   InnoDB  MVCC DB_TRX_ID  ID DB_ROLL_PTR  undo log undo log InnoDB  ID  Read View 
+
+RRRepeatable Read  Read View   MVCC  SELECT  SELECT ... FOR UPDATE  LOCK IN SHARE MODE   RR  MVCC next-key lockMVCC "" 
+
+Redis 
+Skip List Redis ZSet  O(log n) Redis  "" 32  
+
+  //
+
+zskiplistNode
+
+typedef struct zskiplistNode {
+
+sds ele;
+
+// 
+
+double score;
+
+// 
+
+struct zskiplistLevel {
+
+ struct zskiplistNode *forward; //
+
+unsigned int span;
+
+// 
+
+} level[];
+
+} zskiplistNode;
+
+ rand() % 2  32   1 log n  2 3 ZRANGEZRANGEBYSCORE 
+
+ Redis 
+ RPC 
+
+ RPC """"""" " 1 IP ZooKeeper  Nacos  2  userService.getUser(1)  JDK  ByteBuddy   InvocationHandler 3  Netty  ProtobufHessian  JSONProtobuf   4  ID ConcurrentMap CountDownLatch   ID  5  Hash 
+ SkyWalking "" 
+
+ URL  1 ID  62 a-z, A-Z, 0-9  ID  Snowflake  64  long 62  6~8  2 key-value URL Redis  MySQL  TiDB  3302  Location  4 IP  Redis   5 Kafka  HBase  ClickHouse 
+ ID 
+ ID 
+ ID  ID 
+
+1  1000  ID DB  Leaf  2 Snowflake64  Long  ID  ID TPS 
+//  Snowflake 
+long id = ((timestamp << 22) | (workerId << 12) | sequence);
+ ID 3 ID  UUID 4 Leaf  Snowflake  ZooKeeper  Etcd  worker ID 
+
+ QPS + 
+
+ RocketMQ 
+
+ 
+
+RocketMQ " + "Broker  
+
+Broker   ""  Broker 
+
+ProducerBroker ->  ->  /Broker  15  30s
+
+   TransactionMQProducer
+
+TransactionListener
+
+  executeLocalTransaction checkLocalTransaction
+
+producer.sendMessageInTransaction(msg, null);
+  
+
+ Kafka 
+Kafka Exactly-Once Semantics, EOS  Flink  Kafka 
+
+  topic-partition  Kafka Transaction Coordinator __transaction_state   transactional.id  1 begin 2broker "" __consumer_offsets  topic  3 COMMITTED  ABORTED  isolation.level=read_committed   
+props.put("enable.idempotence", true); props.put("transactional.id", "tx-01");
+     initTransactions() beginTransaction() send() commitTransaction()   enable.idempotence 
+
+"""" 1Nginx  Lua  1  503Redis  key  seckill:stock:{itemId}   DECR  2 Kafka MySQL  10w+/s /sMySQL  3 RedisCDN   4Redis  +   Lua  MQ
+ JMeter  5w  100  Redis  Kafka   3  90% 
+Dubbo  Spring Cloud Gateway 
+Dubbo  Spring Cloud Gateway  Dubbo  RPC Dubbo  Netty  TCP " A  B"
+
+ Spring Cloud Gateway  API   WebFlux  HTTP"" api/order/1  order-service  Gateway  Dubbo  Nginx  Spring Cloud Gateway  Dubbo  HTTP  Dubbo 
+@DubboReference private OrderService orderService;
+// 
+Order o = orderService.findById(1);
+ Gateway 
+spring: cloud: gateway: routes: - id: order_route uri: lb://order-service predicates: - Path=/api/order/**
+1Dubbo  RPC  2Gateway   3
+ JVM OOM 
+ JVM  jstat -gc <pid>  GC   30  GC   jmap -heap <pid>   70% OOM   jmap -dump:format=b,file=heap.hprof <pid>  Eclipse MAT  JVisualVM MAT ""Dominator Tree Map   OOM  dump 
+-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/path/to/dumps
+ OOM  dump  jcmd <pid> GC.run_finalization  dump 
+
+ -XX:+PrintGCDetails -Xlog:gc*:file=gc.log GC  OOM   Full GC 
+ Redis 
+ Redis  maxmemory   1  Redis  swap OOM command not allowed  maxmemory  2  info memory  used_memory_rss  used_memory  Redis  mem_fragmentation_ratio > 1.5  3  redis-cli --bigkeys  hashzset  list key   Prometheus + Grafana  Redis Exporter   4
+ maxmemory   LFU/LRU  allkeys-lfu   key  Caffeine Codis  Tendis 
+
+ IP  hosts  DNS   DNS  A   IP TCP  HTTPS TLS   TCP  HTTP  GET /index.html HostUser-Agent    Nginx  Tomcat   HTML  TCP   HTML CSSJS TCP  HTTP Keep-Alive  DOM CSSOMJS   DNS CDN  DNS   6 
+
+ DNS TCP TLS  
+Java 
+Java    ThreadPoolExecutor setCorePoolSize 1 setCorePoolSize(int corePoolSize)    2 QPS   3
+executor.setCorePoolSize(20);
+  ThreadPoolExecutor  Dubbo Tomcat  
+MySQL   select * from  1000 
+ SQL SELECT * FROM   1000   MySQL Server    MySQL WorkbenchNavicat  1000  Java  JDBC  Statement.executeQuery()  fetch  ResultSet  fetchSize(Integer.MIN_VALUE) MySQL   1 SELECT COUNT(*) FROM huge_table  2 WHERE id > ? LIMIT 10000  3 SELECT * FROM   
+ stmt.setFetchSize(Integer.MIN_VALUE); // MySQL
+ResultSet rs = stmt.executeQuery("SELECT * FROM big_table"); while (rs.next()) {
+
+// 
+}
+https://www.mianshiya.com 
+1.  Offer 2.  3. 1  4. AI  AI  5. 1  1 
+
+

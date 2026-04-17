@@ -1,0 +1,102 @@
+{
+  "id": "76290603-d848-4399-b347-478b392c3eba",
+  "createdAt": "2026-04-14T20:28:41.119Z",
+  "startTime": 1776198521119,
+  "totalQuestions": 5,
+  "categories": [
+    "ElasticSearch"
+  ],
+  "resumeContent": "",
+  "customDirections": [],
+  "questions": [
+    {
+      "questionId": "es-010",
+      "question": "ES和关系型数据库的概念对应关系是什么？",
+      "category": "ElasticSearch",
+      "expectedPoints": [],
+      "followUp": [
+        "为什么Type在ES7后被废弃？",
+        "ES支持哪些查询类型？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "es-006",
+      "question": "ES的文档更新和删除流程是什么？",
+      "category": "ElasticSearch",
+      "expectedPoints": [],
+      "followUp": [
+        "段合并的作用是什么？",
+        "如何清理已删除的文档空间？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "es-007",
+      "question": "ES的mapping是什么？dynamic mapping有什么问题？",
+      "category": "ElasticSearch",
+      "expectedPoints": [],
+      "followUp": [
+        "ES有哪些数据类型？",
+        "如何修改已有字段的mapping？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "es-008",
+      "question": "如何优化ES的查询性能？",
+      "category": "ElasticSearch",
+      "expectedPoints": [],
+      "followUp": [
+        "filter为什么比query快？",
+        "什么是search template？"
+      ],
+      "difficulty": "hard",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "es-004",
+      "question": "ES如何实现聚合分析？聚合的原理是什么？",
+      "category": "ElasticSearch",
+      "expectedPoints": [],
+      "followUp": [
+        "doc_values和fielddata的区别？",
+        "聚合结果为什么不准确？"
+      ],
+      "difficulty": "hard",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    }
+  ],
+  "currentIndex": 0,
+  "currentRound": "question",
+  "completed": false,
+  "report": null
+}

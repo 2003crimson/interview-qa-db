@@ -1,0 +1,66 @@
+{
+  "id": "cfd7e64f-e460-4af6-aab0-184fe7741f76",
+  "createdAt": "2026-04-14T21:14:14.857Z",
+  "startTime": 1776201254857,
+  "totalQuestions": 3,
+  "categories": [],
+  "resumeContent": "",
+  "customDirections": [],
+  "questions": [
+    {
+      "questionId": "java-collections-009",
+      "question": "Iterator和ListIterator的区别是什么？",
+      "category": "Java集合",
+      "expectedPoints": [],
+      "followUp": [
+        "Iterator遍历时能否修改集合？为什么？",
+        "fail-fast机制是什么？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": "这是我的回答，线程池有核心线程数和最大线程数等参数。",
+      "aiComment": "感谢回答。由于AI服务未配置，无法进行详细评价。",
+      "score": 50,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "openclaw-002",
+      "question": "Claude Code的Hook机制有哪些？分别在什么时机触发？",
+      "category": "Openclaw",
+      "expectedPoints": [],
+      "followUp": [
+        "Hook能修改工具执行结果吗？",
+        "如何用Hook实现自动代码审查？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "rocketmq-005",
+      "question": "RocketMQ是如何保证高可用的？",
+      "category": "RocketMQ",
+      "expectedPoints": [],
+      "followUp": [
+        "Master和Slave之间如何同步？",
+        "Master挂了如何选举？"
+      ],
+      "difficulty": "hard",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    }
+  ],
+  "currentIndex": 0,
+  "currentRound": "question",
+  "completed": false,
+  "report": null
+}

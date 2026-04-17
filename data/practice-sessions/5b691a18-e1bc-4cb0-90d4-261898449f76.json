@@ -1,0 +1,66 @@
+{
+  "id": "5b691a18-e1bc-4cb0-90d4-261898449f76",
+  "createdAt": "2026-04-14T21:01:06.699Z",
+  "startTime": 1776200466699,
+  "totalQuestions": 3,
+  "categories": [],
+  "resumeContent": "",
+  "customDirections": [],
+  "questions": [
+    {
+      "questionId": "es-010",
+      "question": "ES和关系型数据库的概念对应关系是什么？",
+      "category": "ElasticSearch",
+      "expectedPoints": [],
+      "followUp": [
+        "为什么Type在ES7后被废弃？",
+        "ES支持哪些查询类型？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "java-concurrent-006",
+      "question": "线程池的执行流程是什么？为什么这样设计？",
+      "category": "Java并发",
+      "expectedPoints": [],
+      "followUp": [
+        "核心线程会超时回收吗？需要什么配置？",
+        "线程池大小如何估算？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "java-concurrent-008",
+      "question": "CAS的原理是什么？有什么问题？",
+      "category": "Java并发",
+      "expectedPoints": [],
+      "followUp": [
+        "ABA问题如何解决？",
+        "AtomicInteger的incrementAndGet是如何实现的？"
+      ],
+      "difficulty": "hard",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    }
+  ],
+  "currentIndex": 0,
+  "currentRound": "question",
+  "completed": false,
+  "report": null
+}

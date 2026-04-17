@@ -1,0 +1,119 @@
+{
+  "id": "fde9d98c-b663-473d-a752-a0d960b0b8af",
+  "createdAt": "2026-04-16T16:59:29.052Z",
+  "startTime": 1776358769052,
+  "totalQuestions": 6,
+  "categories": [
+    "RocketMQ"
+  ],
+  "resumeContent": "",
+  "customDirections": [],
+  "questions": [
+    {
+      "questionId": "rocketmq-001",
+      "question": "RocketMQ的消息发送流程是什么？",
+      "category": "RocketMQ",
+      "expectedPoints": [],
+      "followUp": [
+        "RocketMQ如何保证消息不丢失？",
+        "Producer如何获取Topic的路由信息？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": "123",
+      "aiComment": "感谢回答。由于AI服务未配置，无法进行详细评价。",
+      "score": 50,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "rocketmq-004",
+      "question": "RocketMQ的消费模式有哪些？各自的特点？",
+      "category": "RocketMQ",
+      "expectedPoints": [],
+      "followUp": [
+        "如何实现顺序消费？",
+        "消费失败消息会怎样处理？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "rocketmq-002",
+      "question": "RocketMQ的延时消息是如何实现的？",
+      "category": "RocketMQ",
+      "expectedPoints": [],
+      "followUp": [
+        "为什么不支持任意精度的延时？",
+        "延时消息如果一直不消费会怎样？"
+      ],
+      "difficulty": "hard",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "rocketmq-006",
+      "question": "RocketMQ的消息存储结构是什么？为什么这样设计？",
+      "category": "RocketMQ",
+      "expectedPoints": [],
+      "followUp": [
+        "CommitLog为什么能保证顺序写？",
+        "如何查找一条特定消息？"
+      ],
+      "difficulty": "hard",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "rocketmq-003",
+      "question": "RocketMQ的事务消息是如何实现的？",
+      "category": "RocketMQ",
+      "expectedPoints": [],
+      "followUp": [
+        "事务消息的check方法被调用多次怎么办？",
+        "事务消息的性能如何？"
+      ],
+      "difficulty": "hard",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "rocketmq-005",
+      "question": "RocketMQ是如何保证高可用的？",
+      "category": "RocketMQ",
+      "expectedPoints": [],
+      "followUp": [
+        "Master和Slave之间如何同步？",
+        "Master挂了如何选举？"
+      ],
+      "difficulty": "hard",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    }
+  ],
+  "currentIndex": 0,
+  "currentRound": "question",
+  "completed": false,
+  "report": null
+}

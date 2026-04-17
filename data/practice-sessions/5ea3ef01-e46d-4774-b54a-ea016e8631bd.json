@@ -1,0 +1,87 @@
+{
+  "id": "5ea3ef01-e46d-4774-b54a-ea016e8631bd",
+  "createdAt": "2026-04-16T16:43:24.635Z",
+  "startTime": 1776357804635,
+  "totalQuestions": 5,
+  "categories": [
+    "Java基础"
+  ],
+  "resumeContent": "",
+  "customDirections": [],
+  "questions": [
+    {
+      "questionId": "java基础-mo1lbb4mdnf",
+      "question": "Java17有哪些新特性？",
+      "category": "Java基础",
+      "expectedPoints": [],
+      "followUp": [],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": "333",
+      "aiComment": "感谢回答。由于AI服务未配置，无法进行详细评价。",
+      "score": 50,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "java基础-mo1lbb4mwph",
+      "question": "4）运⾏单⽂件源码",
+      "category": "Java基础",
+      "expectedPoints": [],
+      "followUp": [],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "java基础-mo1lbb4m307",
+      "question": "1）虚拟线程（Virtual Threads）进⼊第⼆轮预览",
+      "category": "Java基础",
+      "expectedPoints": [],
+      "followUp": [],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "java基础-mo1lbb4me41",
+      "question": "6）移除部分旧内容",
+      "category": "Java基础",
+      "expectedPoints": [],
+      "followUp": [],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "java基础-mo1lbb4mz70",
+      "question": "如果⼀个线程在Java中被两次调⽤start()⽅法，会发⽣什么？",
+      "category": "Java基础",
+      "expectedPoints": [],
+      "followUp": [],
+      "difficulty": "hard",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    }
+  ],
+  "currentIndex": 0,
+  "currentRound": "question",
+  "completed": false,
+  "report": null
+}

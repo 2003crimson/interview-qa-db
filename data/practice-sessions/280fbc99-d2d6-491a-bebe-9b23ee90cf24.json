@@ -1,0 +1,102 @@
+{
+  "id": "280fbc99-d2d6-491a-bebe-9b23ee90cf24",
+  "createdAt": "2026-04-14T21:17:02.832Z",
+  "startTime": 1776201422832,
+  "totalQuestions": 5,
+  "categories": [
+    "Openclaw"
+  ],
+  "resumeContent": "",
+  "customDirections": [],
+  "questions": [
+    {
+      "questionId": "openclaw-005",
+      "question": "什么是Tool Use？为什么Tool Use对Agent很重要？",
+      "category": "Openclaw",
+      "expectedPoints": [],
+      "followUp": [
+        "Tool Use的典型限制是什么？",
+        "如何设计有效的Tool定义？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "openclaw-008",
+      "question": "Claude Code的工作流程是怎样的？",
+      "category": "Openclaw",
+      "expectedPoints": [],
+      "followUp": [
+        "Claude Code如何处理多步骤复杂任务？",
+        "Agent循环可能陷入哪些问题？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "openclaw-003",
+      "question": "PreTool Hook能做什么？举一个实际应用场景",
+      "category": "Openclaw",
+      "expectedPoints": [],
+      "followUp": [
+        "PostTool和PreTool如何配合使用？",
+        "如何用Hook实现干运行模式？"
+      ],
+      "difficulty": "medium",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "openclaw-010",
+      "question": "如何评估Agent的效果？有哪些关键指标？",
+      "category": "Openclaw",
+      "expectedPoints": [],
+      "followUp": [
+        "如何建立Agent的评测数据集？",
+        "成功率很高但效率很低怎么优化？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "openclaw-009",
+      "question": "Agent的Self-Correction机制是什么？如何在代码中实现？",
+      "category": "Openclaw",
+      "expectedPoints": [],
+      "followUp": [
+        "如何避免Agent陷入无限重试循环？",
+        "Self-Correction和Test-Driven Agent的区别？"
+      ],
+      "difficulty": "hard",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    }
+  ],
+  "currentIndex": 0,
+  "currentRound": "question",
+  "completed": false,
+  "report": null
+}

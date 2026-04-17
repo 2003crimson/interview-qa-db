@@ -1,0 +1,183 @@
+{
+  "id": "8fe1159f-1fe4-4dfd-8760-2855cfa32482",
+  "createdAt": "2026-04-14T20:35:27.292Z",
+  "startTime": 1776198927292,
+  "totalQuestions": 10,
+  "categories": [],
+  "resumeContent": "",
+  "customDirections": [],
+  "questions": [
+    {
+      "questionId": "java-collections-007",
+      "question": "HashSet的底层实现是什么？它是如何保证元素唯一的？",
+      "category": "Java集合",
+      "expectedPoints": [],
+      "followUp": [
+        "为什么重写equals()时必须重写hashCode()？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "java-collections-009",
+      "question": "Iterator和ListIterator的区别是什么？",
+      "category": "Java集合",
+      "expectedPoints": [],
+      "followUp": [
+        "Iterator遍历时能否修改集合？为什么？",
+        "fail-fast机制是什么？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "java-collections-001",
+      "question": "Java集合框架的整体结构是什么？请画出继承关系图",
+      "category": "Java集合",
+      "expectedPoints": [],
+      "followUp": [
+        "Map接口为什么不继承Collection？"
+      ],
+      "difficulty": "easy",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "java-collections-003",
+      "question": "HashMap的底层数据结构是什么？JDK1.7和1.8有什么区别？",
+      "category": "Java集合",
+      "expectedPoints": [],
+      "followUp": [
+        "为什么阈值是8而不是其他值？",
+        "红黑树相比链表的优势是什么？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "jvm-010",
+      "question": "什么情况下会触发Full GC？Full GC和Minor GC的区别？",
+      "category": "JVM",
+      "expectedPoints": [],
+      "followUp": [
+        "对象如何进入老年代？",
+        "如何监控Full GC频率？"
+      ],
+      "difficulty": "medium",
+      "depth": 1,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "redis-009",
+      "question": "Redis BigKey问题是什么？如何处理？",
+      "category": "Redis",
+      "expectedPoints": [],
+      "followUp": [
+        "如何发现热Key？",
+        "Redis单线程为什么还能高并发？"
+      ],
+      "difficulty": "medium",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "java-concurrent-008",
+      "question": "CAS的原理是什么？有什么问题？",
+      "category": "Java并发",
+      "expectedPoints": [],
+      "followUp": [
+        "ABA问题如何解决？",
+        "AtomicInteger的incrementAndGet是如何实现的？"
+      ],
+      "difficulty": "hard",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "redis-004",
+      "question": "Redis如何实现分布式锁？有什么注意事项？",
+      "category": "Redis",
+      "expectedPoints": [],
+      "followUp": [
+        "RedLock算法是什么？",
+        "单机Redis的分布式锁为什么有不安全的问题？"
+      ],
+      "difficulty": "hard",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "jvm-004",
+      "question": "CMS收集器的原理是什么？有什么问题？",
+      "category": "JVM",
+      "expectedPoints": [],
+      "followUp": [
+        "什么是浮动垃圾？",
+        "内存碎片如何解决？"
+      ],
+      "difficulty": "hard",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    },
+    {
+      "questionId": "jvm-005",
+      "question": "G1收集器的原理是什么？它解决了什么问题？",
+      "category": "JVM",
+      "expectedPoints": [],
+      "followUp": [
+        "G1的Remember Set有什么用？",
+        "Young GC和Mixed GC的区别？"
+      ],
+      "difficulty": "hard",
+      "depth": 2,
+      "userAnswer": null,
+      "aiComment": null,
+      "score": null,
+      "needFollowUp": false,
+      "followUpAnswer": null
+    }
+  ],
+  "currentIndex": 0,
+  "currentRound": "question",
+  "completed": false,
+  "report": null
+}
