@@ -1,7 +1,6 @@
 # SpringBoot ⾯试题速记通关版
 
 
-
 推荐更多免费学编程资源：
 
 1.编程导航学习网站：学编程、做项目、拿Offer！  
@@ -713,7 +712,6 @@ return route(GET("/users/{id}"), handler::getById);
 }
 
 迁移时建议先⽤ spring-boot-migrator ⼯具扫描旧项⽬，⾃动⽣成兼容性报告，能省不少事。
-
 
 
 推荐更多免费学编程资源：

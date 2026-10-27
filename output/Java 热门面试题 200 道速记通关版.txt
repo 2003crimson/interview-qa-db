@@ -1,5 +1,4 @@
 Java  200
-
 1.  Offer 2.  3. 1  4. AI  AI  5. 1  1 
 Java 
 Java  Collection  Map   Collection  ListSet  Queue List ArrayList LinkedList  Set HashSet  HashMap  O(1)LinkedHashSet  TreeSet  Queue  ArrayDeque ConcurrentLinkedQueue  DelayQueue  Map HashMap  + /Hashtable   synchronized ConcurrentHashMap  + CAS  LinkedHashMap  LRU TreeMap  1ArrayList  2LinkedList  3HashMap  ConcurrentHashMap 4 TreeSet / TreeMap 5 LinkedHashMap
@@ -1303,7 +1302,6 @@ ResultSet rs = stmt.executeQuery("SELECT * FROM big_table"); while (rs.next()) {
 
 // 
 }
-
 1.  Offer 2.  3. 1  4. AI  AI  5. 1  1 
 
 

@@ -21,7 +21,7 @@ function getCategoryFromFilename(filename) {
     return 'Java热门200题';
   }
 
-  // 其他文件：去掉"面试题速记通关版.md"后缀
+  // 其他文件：去掉“面试题速记通关版.md”后缀
   const suffix = '面试题速记通关版.md';
   const name = filename.endsWith(suffix)
     ? filename.substring(0, filename.length - suffix.length).trim()
